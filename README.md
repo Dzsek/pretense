@@ -197,6 +197,8 @@ Each mission on the list has a short description, and most importantly a `4 digi
 
 Missions expire after a few minutes if not taken by anyone, or, if due to changes on the battlefield, they are no longer valid.
 
+Some mission types can have multiple variations with slightly different sets of objectives and difficulties.
+
 ### 3.2 Accepting, joining and leaving a mission
 
 Before being able to complete a mission you will need to accept it. This can only be done while landed and stationary at a friendly zone.
@@ -226,7 +228,7 @@ Once any member of the mission takes off the mission will change into the `comme
 The mission can not be joined in this phase. This is a transitory state that lasts until all players have taken off. While still in this phase, the airborne players can still land to turn the mission back into the `prepping` phase, should you wish to add someone else to your mission.
 
 Once every member has taken off the mission turns `active` and the objectives can now be completed.
-These vary based on the mission you have accepted and can be checked by accessing your active mission details mentioned in [the section 3.2](#32-accepting-joining-and-leaving-a-mission).
+These vary based on the mission you have accepted and can be checked by accessing your active mission details mentioned in [section 3.2](#32-accepting-joining-and-leaving-a-mission).
 
 Some missions require you to complete all objectives listed, some only require that you complete any one of them. This is specified in the mission description.
 
@@ -247,7 +249,24 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 
 ### 3.5 Mission Types
 
-:warning: unfinished section :warning:
+| Mission | Description | Available to |
+|:-------:|:------------|:------------:|
+|CAP| Patrol between the specified zones and engage enemies on your way. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register.| Fixed wing|
+|TARCAP| Protect the specified players while they accomplish their mission. Mission completion is tied to target missions completion | Fixed wing|
+|CAS| Destroy the specified number of ground units. Some variations need the units to be destoyed at a specific location| Any|
+|BAI| Destroy the specified convoy before it reaches its destination|Any|
+|SEAD| Destroy a radar at the specified zone | Any|
+|DEAD| Destroy all air defenses at the specified zone| Any|
+|Strike| Destroy either the specified number of structures at a zone, or a specific structure. Specific target missions are made available by completing Recon missions. | Any|
+|Deep Strike| Destroy a specific structure, deep behind enemy lines. Mission made available by completing Deep Recon missions | Any|
+|Runway Attack| :warning: unimplemented | Any |
+|Recon (Fixed wing)| Fly over the specified zone. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Generates Strike mission targets on completion. | Fixed wing |
+|Deep Recon(Fixed wing)| Fly over the specified zone, deep behind enemy lines. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Generates Deep Strike mission targets on completion. | Fixed wing |
+|Recon (Helicopter)| Fly within range of the specified zone and stay within sight of as many enemy units as you can. Objective completes faster the more enemies from the zone are visible to you. Generates Strike mission targets on completion. | Any helicopter |
+|Supply| Transport specified amount of resources to specified zone | Supply stransport capable aircraft [section 2.3](#23-compatible-aircraft)|
+|Escort| Escort specified friendly convoy on their way between zones. Objective is completed by spending the required time near the convoy, or if the convoy reaches its destination. | Any helicopter|
+|CSAR| :warning: unimplemented | Infantry transport capable aircraft [section 2.3](#23-compatible-aircraft)|
+|Extraction| :warning: unimplemented| Infantry transport capable aircraft [section 2.3](#23-compatible-aircraft)|
 
 ## 4. Player XP and Ranks
 
