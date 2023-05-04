@@ -97,7 +97,7 @@ Again, these rules are not set in stone and there are some exceptions if you loo
     - Orbits the airbase it is deployed at
     - Anounces frequency on takeoff
 - Tanker
-    - NOT IMPLEMENTED :warning:unfinished
+    - NOT IMPLEMENTED :warning:unimplemented
 - Assault
     - Ground convoy, move on roads, attack connected enemy zones
     - While inside an enemy zone, will trigger an explosion at a random enemy structure inside the zone
@@ -212,7 +212,7 @@ In this phase the mission has not started yet, and is only visible to you using 
 You will notice that the `4 digit code` has been replaced by a new one.
 This new code is only visible to you. If you so wish you can share it with a friend, who can use it to join you on your mission.
 
-To do so he has to create a marker anywhere on the map and set its text to `join:code` where code will be the `4 digit code` that you shared with him. *ex. accept:1234*
+To do so he has to create a marker anywhere on the map and set its text to `join:code` where code will be the `4 digit code` that you shared with him. *ex. join:1234*
 
 Any number of players can join the same mission, and the displayed rewards will be awarded to every player individually, no splitting.
 
