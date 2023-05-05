@@ -21,23 +21,12 @@ A coalition looses control of a zone once all of its structures are destroyed, a
 Zones function in a variaty of modes, that are set automatically by the game based on their distance from the frontline, and in some cases, the purpose of the zone.
 
 Modes:
-- Normal
-    - zone functions at its full capacity using its resources to build structures, deploy/repair defenses, and launch AI missions
-    - reserved for zones directly on the frontline where the action is happening
-    
-- Supply
-    - zone functions like normal, except it no longer launches AI missions, except those that transfer resources to other zones
-    - reserved for zones close to the frontline but not directly neighboring enemy zones
-    - these zones focus on supplying the front, but are still somewhat defensive
-
-- Export
-    - zone will sell all defenses and focus on pushing resources towards the front
-    - reserved for zones far from the frontline where not much action happens
-    - zones will still attempt to build structures
-
-- Override
-    - these zones always function as if they were in Normal mode, regardless of where they are located
-    - reserved for zones that hold SAM sites and Airfields
+|Mode |Description|
+|:---:|:----------|
+|Normal|Zone functions at its full capacity using its resources to build structures, deploy/repair defenses, and launch AI missions<br/>Reserved for zones directly on the frontline where the action is happening|
+|Supply|Zone functions like normal, except it no longer launches AI missions, except those that transfer resources to other zones<br/>Reserved for zones close to the frontline but not directly neighboring enemy zones<br/>These zones focus on supplying the front, but are still somewhat defensive|
+|Export|Zone will sell all defenses and focus on pushing resources towards the front<br/>Reserved for zones far from the frontline where not much action happens<br/>Zones will still attempt to build structures|
+|Override|These zones always function as if they were in Normal mode, regardless of where they are located<br/>reserved for zones that hold SAM sites and Airfields|
 
 ### 1.2 Resources
 
@@ -60,48 +49,36 @@ The root of this tree is a list of structures, each one, when built will unlock 
 
 There is no hard rules on what each building can do, but there are some general ones:
 
-- Tents & Barracks
-    - usually the first structure built(for free) once a zone is captured.
-    - allows the zone to deploy infantry and armor to defend itself
-
-- Fuel storage buildings
-    - allow the zone to transfer resources to other zones in need
-
-- Ammo storage buildings
-    - allow the zone to launch ground based assault missions against enemy zones
-
-- Command centers
-    - allow the zone to deploy air defenses and launch aircraft in missions against enemy zones
+|Type|Description|
+|:---:|:----|
+|Tents & Barracks|Usually the first structure built(for free) once a zone is captured.<br/>Allows the zone to deploy infantry and armor to defend itself|
+|Fuel storage buildings|Allow the zone to transfer resources to other zones in need|
+|Ammo storage buildings|Allow the zone to launch ground based assault missions against enemy zones|
+|Command centers|Allow the zone to deploy air defenses and launch aircraft in missions against enemy zones|
 
 Again, these rules are not set in stone and there are some exceptions if you look hard enough.
 
-### 1.4 AI Mission types
+### 1.4 Zone labels
 
-- Supply 
-    - Moves resources between two zones
-    - Captures neutral zones
-    - Supply convoys: slow, move on roads, will only supply connected zones
-    - Supply helicopters: fast, will supply zones up to 2 connections away
-- Patrol
-    - Patrols the area around the frontline and engages enemy aircraft
-- CAS
-    - Engages enemy defenses at zones near the frontline
-    - Two types: Fixed wing and Helicopters
-- BAI
-    - Engages enemy convoys
-- Strike
-    - Bombs enemy structures near the frontline
-- SEAD
-    - Engages air defenses at zones near the frontline
-- AWACS
-    - Orbits the airbase it is deployed at
-    - Anounces frequency on takeoff
-- Tanker
-    - NOT IMPLEMENTED :warning:unimplemented
-- Assault
-    - Ground convoy, move on roads, attack connected enemy zones
-    - While inside an enemy zone, will trigger an explosion at a random enemy structure inside the zone
-    - If the zone turns neutral, they will capture it and despawn
+Zones labels contain the zones name and how many resources they have.
+In case the zone is building something it will also display the name of what is being built and its progress towards completing it.
+
+In the case of enemy zones, only the name of the zone will be displayed, unless revealed by player recon missions (see [section 3.5](#35-mission-types)).
+
+### 1.5 AI Mission types
+
+|Mission Type|Description|
+|:----------:|:----------|
+|Supply| Moves resources between two zones<br/>Captures neutral zones<br/>Supply convoys: slow, move on roads, will only supply connected zones<br/>Supply helicopters: fast, will supply zones up to 2 connections away|
+|Patrol|Patrols the area around the frontline and engages enemy aircraft|
+|CAS|Engages enemy defenses at zones near the frontline<br/>Two types: Fixed wing and Helicopters|
+|BAI|Engages enemy convoys|
+|Strike|Bombs enemy structures near the frontline|
+|SEAD|Engages air defenses at zones near the frontline|
+|AWACS|Orbits the airbase it is deployed at|Anounces frequency on takeoff|
+|Tanker|:warning:unimplemented|
+|Assault|Ground convoy, move on roads, attack connected enemy zones<br/>While inside an enemy zone, will trigger an explosion at a random enemy structure inside the zone<br/>If the zone turns neutral, they will capture it and despawn|
+|Cargo planes|Special missions that periodically fly in from the edge of the map and land at airfields to inject new supplies into the economy|
 
 ## 2. Logistics
 This section covers only player logistics. For AI logistics see the supply AI mission in section 1.4
@@ -116,7 +93,7 @@ To load and unload supply you need to be stationary on the ground, within the li
 
 Each unit of supply weighs 1kg.
 
-Managing supplies onboard your aircraft is done using the `Other->Logistics->Load/Unload supplies` options in the radio menu. This is only available to aircraft that are allowed to carry supplies. A list of compatible aircraft is provided in [section 2.3](#23-compatible-aircraft)
+Managing supplies onboard your aircraft is done using the `Other->Logistics->Load/Unload supplies` options in the radio menu. This is only available to aircraft that are allowed to carry supplies. A list of compatible aircraft is provided in [section 2.4](#24-compatible-aircraft)
 
 Loading supplies removes them from the zone.
 Unloading them adds them to the zone.
@@ -127,7 +104,7 @@ Dying or abandoning your aircraft with supplies on board will cause the supplies
 
 Some aircraft are capable of deploying infantry squads with various roles to the battlefield. Every squad has a specific purpose, and once they accomplish their mission, can be extracted back to a friendly zone.
 
-Managing squads onboard your aircraft is done using the `Other->Logistics->Infantry` options in the radio menu. This is only available to aircraft that are allowed to carry infantry. A list of compatible aircraft is provided in [section 2.3](#23-compatible-aircraft)
+Managing squads onboard your aircraft is done using the `Other->Logistics->Infantry` options in the radio menu. This is only available to aircraft that are allowed to carry infantry. A list of compatible aircraft is provided in [section 2.4](#24-compatible-aircraft)
 
 Loading a squad costs a certain amount of resources from the zone. This is dependant on the type of squad you are trying to load.
 The zone will refuse your request if it is low on resources.
@@ -163,7 +140,11 @@ Squad stats
 
 >*Note that Capture and Engineer squads do not require extraction if they were deployed in accordance with their mission 
 
-### 2.3 Compatible aircraft
+### 2.3 CSAR (Combat search and rescue)
+
+:warning: unimplemented
+
+### 2.4 Compatible aircraft
 By default the following aircraft can participate in logistics
 | Aircraft | Can carry supplies | Can carry infantry |
 |:---:|:---:|:---:|
@@ -183,7 +164,7 @@ Although community mods are not available in the mission by default, the followi
 
 ## 3. Missions
 
->Note: a lot of the functions related to missions use map markers(the little circle icon at the top of the map), and their text boxes for inputing commands. These are used due to limitations with the radio menu, specifically updating the text of the commands and identifying specific players that used these commands. A reminder on the commands can be accessed using the `Other->Missions->Help` option in the radio, or by creating a map marker anywhere and settings its text to `help`
+>Note: A reminder on the commands can be accessed using the `Other->Missions->Help` option in the radio, or by creating a map marker anywhere and settings its text to `help`
 
 These are assignments that can be taken by players and completed for an XP reward.
 
@@ -203,7 +184,7 @@ Some mission types can have multiple variations with slightly different sets of 
 
 Before being able to complete a mission you will need to accept it. This can only be done while landed and stationary at a friendly zone.
 
-To accept a mission, create a marker anywhere on the map and set its text to `accept:code` where code will be your `4 digit code` as written on the mission board. *ex. accept:1234*
+To accept a mission, you can either dial it in using the `Other->Missions->Dial Code` option in the radio menu, or create a marker anywhere on the map and set its text to `accept:code` where code will be your `4 digit code` as written on the mission board. *ex. accept:1234*
 
 If the code was for a valid mission, this mission will now be assigned to you, and it will be removed from the mission board. The mission will now enter the `prepping` phase.
 
@@ -212,13 +193,13 @@ In this phase the mission has not started yet, and is only visible to you using 
 You will notice that the `4 digit code` has been replaced by a new one.
 This new code is only visible to you. If you so wish you can share it with a friend, who can use it to join you on your mission.
 
-To do so he has to create a marker anywhere on the map and set its text to `join:code` where code will be the `4 digit code` that you shared with him. *ex. join:1234*
+To do so, he can either dial it in using the `Other->Missions->Dial Code` option in the radio menu, or he can create a marker anywhere on the map and set its text to `join:code` where code will be the `4 digit code` that you shared with him. *ex. join:1234*
 
 Any number of players can join the same mission, and the displayed rewards will be awarded to every player individually, no splitting.
 
 Missions can only be joined by players who are on the ground inside a friendly zone, and as long as all current members are still on the ground and the mission is still in the `prepping` phase.
 
-Leaving a mission in progress can be done by, you guessed it, creating a marker anywhere on the map and settings its text to `leave`.
+Leaving a mission in progress can be done by either using the `Other->Missions->Leave Mission` option in the radio menu, or creating a marker anywhere on the map and settings its text to `leave`.
 
 ### 3.3 Starting and completing a mission
 
@@ -263,20 +244,35 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 |Recon (Fixed wing)| Fly over the specified zone. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Generates Strike mission targets on completion. | Fixed wing |
 |Deep Recon(Fixed wing)| Fly over the specified zone, deep behind enemy lines. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Generates Deep Strike mission targets on completion. | Fixed wing |
 |Recon (Helicopter)| Fly within range of the specified zone and stay within sight of as many enemy units as you can. Objective completes faster the more enemies from the zone are visible to you. Generates Strike mission targets on completion. | Any helicopter |
-|Supply| Transport specified amount of resources to specified zone | Supply stransport capable aircraft [section 2.3](#23-compatible-aircraft)|
+|Supply| Transport specified amount of resources to specified zone | Supply stransport capable aircraft [section 2.4](#24-compatible-aircraft)|
 |Escort| Escort specified friendly convoy on their way between zones. Objective is completed by spending the required time near the convoy, or if the convoy reaches its destination. | Any helicopter|
-|CSAR| :warning: unimplemented | Infantry transport capable aircraft [section 2.3](#23-compatible-aircraft)|
-|Extraction| :warning: unimplemented| Infantry transport capable aircraft [section 2.3](#23-compatible-aircraft)|
+|CSAR| :warning: unimplemented | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
+|Extraction| :warning: unimplemented| Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
 
-## 4. Player XP and Ranks
+## 4. Finding information while playing
+
+:warning: unfinished section
+
+- kneeboards
+- radio channel menu
+- player info menu
+
+## 5. Player XP and Ranks
 
 You gain XP by completing missions, killing enemies and delivering resources.
 After a certain ammount of XP you will rank up.
 
 XP and ranks do not have a gameplay purpose at the moment. They are just theres for tracking your contributions to the mission and bragging rights.
 
-## 5. Persistence
-This mission comes with persistance, which allows the mission to remember its state when you exist the mission and continue from there once you start it up again.
+## 6. Editing
+
+:warning: unfinished section
+
+- add any client aircraft you want anywhere
+- how to adjust allowed logistics and squad
+
+## 7. Persistence
+This mission comes with persistance, which allows the mission to remember its state when you exit the mission and continue from there once you start it up again.
 
 To enable persistance you have to allow the mission environment inside DCS to read and write to and from your file system. To do this you will need to edit `\Scripts\MissionScripting.lua` inside your DCS or DCS server installation folder.
 
@@ -309,14 +305,14 @@ To reset progress and start the mission from the beginning you can delete the sa
 
 This can be found in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`, and its called `pretense_<version>.js`
 
-## 6. Running the mission on a server
+## 8. Running the mission on a server
 
-### 6.1 Slotblock
+### 8.1 Slotblock
 
 For players to be prevented from spawning at enemy zones, the included `slotblock.lua` file must be placed in your servers `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Scripts\Hooks` folder, and the server restarted, in case it was already running at the time.
 
 
-### 6.2 Stats file
+### 8.2 Stats file
 
 In addition to the save file the mission also writes to a file called `player_stats.js` in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`
 
