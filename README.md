@@ -38,7 +38,7 @@ Everything a zone builds consumes supply, but each structure, defensive group, o
 
 Build time depends on the cost of whatever the zone is currently building, but is also occasionally influenced by the game to provide a limited pushback oportunity by either of the coalitions.
 
-Zones that are below a certain treshold of resources will gain a "low supply" trait, which restricts what they can build, but also makes them more likely to get resupplied by other friendly zones.
+Zones that are below a certain treshold of resources will gain a "low supply" trait, which restricts what they can build, but also makes them more likely to get resupplied by other friendly zones. This is marked in by the `(!)` in the zone label.
 
 ### 1.3 Production
 
@@ -172,7 +172,7 @@ Missions are generated based on the state of the battlefield. Not all types of m
 
 ### 3.1 The mission board
 
-Currently available missions can be viewed on the `mission board` by accesing `Other->Missions->List Missions` in the radio menu or by creating a marker on the map and settings its text to `list`.
+Currently available missions can be viewed on the `mission board` by accesing `Other->Missions->List Missions` in the radio menu.
 
 Each mission on the list has a short description, and most importantly a `4 digit code` that is unique to that mission. The next section will describe how to use this code to accept a mission.
 
@@ -184,22 +184,24 @@ Some mission types can have multiple variations with slightly different sets of 
 
 Before being able to complete a mission you will need to accept it. This can only be done while landed and stationary at a friendly zone.
 
-To accept a mission, you can either dial it in using the `Other->Missions->Dial Code` option in the radio menu, or create a marker anywhere on the map and set its text to `accept:code` where code will be your `4 digit code` as written on the mission board. *ex. accept:1234*
+To accept a mission, you can dial in its `4 digit code` using the `Other->Missions->Dial Code` option in the radio menu.
 
 If the code was for a valid mission, this mission will now be assigned to you, and it will be removed from the mission board. The mission will now enter the `prepping` phase.
 
-In this phase the mission has not started yet, and is only visible to you using the `Other->Missions->Active Mission` option in the radio, or by creating a marker on the map and settings its text to `active`.
+In this phase the mission has not started yet, and is only visible to you using the `Other->Missions->Active Mission` option in the radio.
 
 You will notice that the `4 digit code` has been replaced by a new one.
 This new code is only visible to you. If you so wish you can share it with a friend, who can use it to join you on your mission.
 
-To do so, he can either dial it in using the `Other->Missions->Dial Code` option in the radio menu, or he can create a marker anywhere on the map and set its text to `join:code` where code will be the `4 digit code` that you shared with him. *ex. join:1234*
+To do so, he can dial in the `4 digit code` that you shared with him using the `Other->Missions->Dial Code` option in the radio menu.
 
 Any number of players can join the same mission, and the displayed rewards will be awarded to every player individually, no splitting.
 
 Missions can only be joined by players who are on the ground inside a friendly zone, and as long as all current members are still on the ground and the mission is still in the `prepping` phase.
 
-Leaving a mission in progress can be done by either using the `Other->Missions->Leave Mission` option in the radio menu, or creating a marker anywhere on the map and settings its text to `leave`.
+Leaving a mission in progress can be done by using the `Other->Missions->Leave Mission` option in the radio menu.
+
+All of these options are also available by map marker commands. For instructions on how to use them you can access the `Other->Missions->Help` option in the radio menu, or create a marker anywhere on the map and set its text to `help`.
 
 ### 3.3 Starting and completing a mission
 
@@ -241,9 +243,9 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 |Strike| Destroy either the specified number of structures at a zone, or a specific structure. Specific target missions are made available by completing Recon missions. | Any|
 |Deep Strike| Destroy a specific structure, deep behind enemy lines. Mission made available by completing Deep Recon missions | Any|
 |Runway Attack| :warning: unimplemented | Any |
-|Recon (Fixed wing)| Fly over the specified zone. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Generates Strike mission targets on completion. | Fixed wing |
-|Deep Recon(Fixed wing)| Fly over the specified zone, deep behind enemy lines. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Generates Deep Strike mission targets on completion. | Fixed wing |
-|Recon (Helicopter)| Fly within range of the specified zone and stay within sight of as many enemy units as you can. Objective completes faster the more enemies from the zone are visible to you. Generates Strike mission targets on completion. | Any helicopter |
+|Recon (Fixed wing)| Fly over the specified zone. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Can reveal targets for Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Fixed wing |
+|Deep Recon(Fixed wing)| Fly over the specified zone, deep behind enemy lines. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Can reveal targets for Deep Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Fixed wing |
+|Recon (Helicopter)| Fly within range of the specified zone and stay within sight of as many enemy units as you can. Objective completes faster the more enemies from the zone are visible to you. Can reveal targets for Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Any helicopter |
 |Supply| Transport specified amount of resources to specified zone | Supply stransport capable aircraft [section 2.4](#24-compatible-aircraft)|
 |Escort| Escort specified friendly convoy on their way between zones. Objective is completed by spending the required time near the convoy, or if the convoy reaches its destination. | Any helicopter|
 |CSAR| :warning: unimplemented | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
@@ -251,11 +253,28 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 
 ## 4. Finding information while playing
 
-:warning: unfinished section
+### 4.1 Kneeboard - :warning:unimplemented
 
-- kneeboards
-- radio channel menu
-- player info menu
+Your kneeboard contains a few pages covering the location of each zone, in alphabetical order.
+
+Should your plane support waypoints, you will also find which waypoint each zone is assigned to by default.
+
+Some planes have a limited ammount of waypoints, and they wont have all zones programmed in.
+
+The Ka-50 waypoints are always offset by 1, as waypoint 1 is considered the start position of the aircraft.
+
+### 4.2 Radio Channels
+
+The mission regularly spawns support units that you might need to contact within mission, like AWACS and Tankers.
+The frequencies for them can be checked in the `Other->Information->Frequencies` option in the radio menu.
+
+Only units that are currently alive are shown in this menu. It can happen that the unit in question is just spawned and is in the process of taking off and will not immediatly respond on the frequency.
+
+### 4.3 Player information
+
+Your stats can be accessed through the `Other->Information->Player` option in the radio menu.
+
+This currently only contains your name, XP, and rank.
 
 ## 5. Player XP and Ranks
 
@@ -264,12 +283,31 @@ After a certain ammount of XP you will rank up.
 
 XP and ranks do not have a gameplay purpose at the moment. They are just theres for tracking your contributions to the mission and bragging rights.
 
-## 6. Editing
+## 6. Editing the mission to suit your needs
 
-:warning: unfinished section
 
-- add any client aircraft you want anywhere
-- how to adjust allowed logistics and squad
+- You can add any client aircraft you want anywhere on the map. Should you add it inside the borders of a zone, the slot will be blocked according to the state of the zone. No extra effort required on your part to make it work.
+- Due to limitations with the DCS scripting API, multiple client aircraft in the same group are not supported. Please limit all slots to single aircraft groups, otherwise the radio menu and some other features will not work correctly.
+- You **can not** adjust difficulty by deleting AI aircraft from the mission editor. Doing so will result in script errors.
+- Logistics capable aircraft where categorized by what maked logical sense on what they can carry. In case you would like to enable logistics for other aircraft you can do so by adding a doScript action afther the scripts are loaded in the initialization trigger in the mission editor and overriding the values in there like this:
+
+```
+PlayerLogistics.allowedTypes['Mi-24P'] = { supplies = true, infantry = true }
+PlayerLogistics.allowedTypes['Mi-8MT'] = { supplies = true, infantry = true }
+PlayerLogistics.allowedTypes['UH-1H'] = { supplies = true, infantry = true }
+PlayerLogistics.allowedTypes['Hercules'] = { supplies = true, infantry = true }
+PlayerLogistics.allowedTypes['UH-60L'] = { supplies = true, infantry = true }
+PlayerLogistics.allowedTypes['Ka-50'] = { supplies = false, infantry = false }
+PlayerLogistics.allowedTypes['Ka-50_3'] = { supplies = false, infantry = false }
+PlayerLogistics.allowedTypes['SA342Mistral'] = { supplies = false, infantry = true }
+PlayerLogistics.allowedTypes['SA342L'] = { supplies = false, infantry = true }
+PlayerLogistics.allowedTypes['SA342M'] = { supplies = false, infantry = true }
+PlayerLogistics.allowedTypes['SA342Minigun'] = { supplies = false, infantry = true }
+PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false, infantry = false }
+```
+- You only need to add the lines for the aircraft you want to change.
+
+- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects.
 
 ## 7. Persistence
 This mission comes with persistance, which allows the mission to remember its state when you exit the mission and continue from there once you start it up again.
@@ -304,6 +342,14 @@ end
 To reset progress and start the mission from the beginning you can delete the save file. 
 
 This can be found in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`, and its called `pretense_<version>.js`
+
+### 7.1 Persistence caveats
+
+Since persistence is not a native feature to DCS, some compromises are in place. These are bandaid solutions for problems that either can not be fixed, need more time to fix, or simply fixing them would be more effort than its worth.
+
+- AI groups are not restored to the positions they were when you stopped the mission. However, since they cost resources, and to prevent these resources disapearing into thin air, they will respawn in the first 10 minutes after starting the mission, at random times. These respawns bypass the rules of the mission, do not require build time, and do not cost resources. Supply and support groups are always going to respawn, attack groups only respawn if they have spent less than 10 minutes in the air or on route.
+
+- Damaged defensive groups always respawn at full strength if the mission is restarted, and in case the zone was repairing them before the restart, this repair will be canceled and resources lost.
 
 ## 8. Running the mission on a server
 
