@@ -32,7 +32,7 @@ Modes:
 
 Zones use a resource called "supply" to either build structures, deploy defenses, resupply other zones or launch missions against the enemy.
 
-There is a maximum ammount of supply that a zone can hold, any further deliveries are lost.
+There is a maximum amount of supply that a zone can hold, any further deliveries are lost.
 
 Everything a zone builds consumes supply, but each structure, defensive group, or AI mission has different costs.
 
@@ -122,7 +122,7 @@ Available infrantry squads:
 | Squad | Description |
 |:-----:|:------------|
 |Capture| If deployed at a neutral zone, will capture the zone to their side |
-|Sabotage| If deployed to an enemy zone, will trigger an explosion at a random structure within the zone, which in turn destroys a random ammount of resources as well in that zone |
+|Sabotage| If deployed to an enemy zone, will trigger an explosion at a random structure within the zone, which in turn destroys a random amount of resources as well in that zone |
 |Ambush| Squad armed with rifles and RPGs that can be deployed anywhere on the battlefield. Can be used to intercept enemy convoys.|
 |Engineers| If deployed at a friendly zone, they will boost production speed in that while reducing costs for anything built at the zone for a limited time.|
 |MANPADS| Squad armed with rifles for self protection and MANPADS, that can be deployed anywhere on the battlefield. Can be used to provide some protection from enemy aircraft or intercept enemy supply helicopters|
@@ -219,7 +219,7 @@ Some objectives are not meant to be completed, but will increase the final rewar
 
 Some missions will provide guiding information for your objectives, be it bearing & distance, accurate coordinates, or just names of zones.
 
-Some objectives can be completed by any of the players (ex. destroy X ammount of ground units), some
+Some objectives can be completed by any of the players (ex. destroy X amount of ground units), some
 need to be completed at the same time by all players (ex. fly over a specific zone), and some can be accomplished faster if more players are doing the activity together (ex. helicopter recon).
 
 Once the objectives are completed the missions is considered complete, and rewards are distributed to each player into their temporary accounts. Anything in the temporary account will be lost if the player dies or abandones their aircraft. To claim these rewards permanently, the player must land at a friendly zone.
@@ -242,7 +242,7 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 |DEAD| Destroy all air defenses at the specified zone| Any|
 |Strike| Destroy either the specified number of structures at a zone, or a specific structure. Specific target missions are made available by completing Recon missions. | Any|
 |Deep Strike| Destroy a specific structure, deep behind enemy lines. Mission made available by completing Deep Recon missions | Any|
-|Runway Attack| :warning: unimplemented | Any |
+|Runway Attack| Bomb runway at specified zone with minimum 5 bombs. Going above the required amount will increase the reward. Missiles and cluster bombs can not be used to complete this mission. | Any |
 |Recon (Fixed wing)| Fly over the specified zone. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Can reveal targets for Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Fixed wing |
 |Deep Recon(Fixed wing)| Fly over the specified zone, deep behind enemy lines. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register. Can reveal targets for Deep Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Fixed wing |
 |Recon (Helicopter)| Fly within range of the specified zone and stay within sight of as many enemy units as you can. Objective completes faster the more enemies from the zone are visible to you. Can reveal targets for Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Any helicopter |
@@ -259,7 +259,7 @@ Your kneeboard contains a few pages covering the location of each zone, in alpha
 
 Should your plane support waypoints, you will also find which waypoint each zone is assigned to by default.
 
-Some planes have a limited ammount of waypoints, and they wont have all zones programmed in.
+Some planes have a limited amount of waypoints, and they wont have all zones programmed in.
 
 The Ka-50 waypoints are always offset by 1, as waypoint 1 is considered the start position of the aircraft.
 
@@ -279,7 +279,7 @@ This currently only contains your name, XP, and rank.
 ## 5. Player XP and Ranks
 
 You gain XP by completing missions, killing enemies and delivering resources.
-After a certain ammount of XP you will rank up.
+After a certain amount of XP you will rank up.
 
 XP and ranks do not have a gameplay purpose at the moment. They are just theres for tracking your contributions to the mission and bragging rights.
 
@@ -343,13 +343,7 @@ To reset progress and start the mission from the beginning you can delete the sa
 
 This can be found in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`, and its called `pretense_<version>.js`
 
-### 7.1 Persistence caveats
-
-Since persistence is not a native feature to DCS, some compromises are in place. These are bandaid solutions for problems that either can not be fixed, need more time to fix, or simply fixing them would be more effort than its worth.
-
-- AI groups are not restored to the positions they were when you stopped the mission. However, since they cost resources, and to prevent these resources disapearing into thin air, they will respawn in the first 10 minutes after starting the mission, at random times. These respawns bypass the rules of the mission, do not require build time, and do not cost resources. Supply and support groups are always going to respawn, attack groups only respawn if they have spent less than 10 minutes in the air or on route.
-
-- Damaged defensive groups always respawn at full strength if the mission is restarted, and in case the zone was repairing them before the restart, this repair will be canceled and resources lost.
+> Note: AI groups that are restored from a save file will always be at full numbers, even if part of the group was destroyed previously
 
 ## 8. Running the mission on a server
 
