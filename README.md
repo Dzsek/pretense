@@ -1,4 +1,4 @@
-# Pretense User Manual
+# User Manual
 
 ---
 :warning: **The mission is not released yet and the manual is still work in progress**
@@ -142,23 +142,35 @@ Squad stats
 
 ### 2.3 CSAR (Combat search and rescue)
 
-:warning: unimplemented
+Pilots that eject in combat can be rescued by players using transport capable aircraft. The commands relevant to CSAR can be found under the `Other->Logistics->CSAR` option in the radio menu.
+
+This menu holds commands that aid you in finding someone to rescue, as well as the commands you use to extract and unload your targets.
+
+The `Show info` command will show you bearing and distance to the nearest pilot in need of rescue.
+
+The `Smoke marker` command will tell the nearest pilot to deploy a smoke marker nearby, as a visual aid to help find him. A `Flare` command is also available for low visibility conditions.
+
+To be able to extract a pilot you dont necessarily need to land, but you will need to at least hover close to your target. Once you are in position you can extract your target using the `Extract pilot` command.
+
+You can bring your rescues back to any frienly zone and unload them using the `Unload` command to regain some resources for the zone.
+
+Each aircraft has a maximum amount of rescued pilots that it can hold at one time, this limit is specified below in [section 2.4](#24-compatible-aircraft)
 
 ### 2.4 Compatible aircraft
 By default the following aircraft can participate in logistics
-| Aircraft | Can carry supplies | Can carry infantry |
-|:---:|:---:|:---:|
-|Mi-24P|Yes|Yes|
-|Mi-8MT|Yes|Yes|
-|UH-1H|Yes|Yes|
-|SA342|No|Yes|
+| Aircraft | Can carry supplies | Can carry infantry | CSAR capacity |
+|:---:|:---:|:---:|:---:|
+|Mi-24P|Yes|Yes|8|
+|Mi-8MT|Yes|Yes|24|
+|UH-1H|Yes|Yes|12|
+|SA342|No|Yes|2|
 
 Although community mods are not available in the mission by default, the following mods are suported if you choose to add them.
 
-| Aircraft | Can carry supplies | Can carry infantry |
-|:---:|:---:|:---:|
-|Hercules*|Yes|Yes|
-|UH-60L|Yes|Yes|
+| Aircraft | Can carry supplies | Can carry infantry | CSAR capacity |
+|:---:|:---:|:---:|:---:|
+|Hercules*|Yes|Yes|92|
+|UH-60L|Yes|Yes|11|
 
 >*Note that the Hercules cargo drop is not suported at this time, logistics can only be done using the radio menu
 
@@ -292,18 +304,18 @@ XP and ranks do not have a gameplay purpose at the moment. They are just theres 
 - Logistics capable aircraft where categorized by what maked logical sense on what they can carry. In case you would like to enable logistics for other aircraft you can do so by adding a doScript action afther the scripts are loaded in the initialization trigger in the mission editor and overriding the values in there like this:
 
 ```
-PlayerLogistics.allowedTypes['Mi-24P'] = { supplies = true, infantry = true }
-PlayerLogistics.allowedTypes['Mi-8MT'] = { supplies = true, infantry = true }
-PlayerLogistics.allowedTypes['UH-1H'] = { supplies = true, infantry = true }
-PlayerLogistics.allowedTypes['Hercules'] = { supplies = true, infantry = true }
-PlayerLogistics.allowedTypes['UH-60L'] = { supplies = true, infantry = true }
-PlayerLogistics.allowedTypes['Ka-50'] = { supplies = false, infantry = false }
-PlayerLogistics.allowedTypes['Ka-50_3'] = { supplies = false, infantry = false }
-PlayerLogistics.allowedTypes['SA342Mistral'] = { supplies = false, infantry = true }
-PlayerLogistics.allowedTypes['SA342L'] = { supplies = false, infantry = true }
-PlayerLogistics.allowedTypes['SA342M'] = { supplies = false, infantry = true }
-PlayerLogistics.allowedTypes['SA342Minigun'] = { supplies = false, infantry = true }
-PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false, infantry = false }
+PlayerLogistics.allowedTypes['Mi-24P'] = { supplies = true, infantry = true, pilotCapacity = 8 }
+PlayerLogistics.allowedTypes['Mi-8MT'] = { supplies = true, infantry = true, pilotCapacity = 24 }
+PlayerLogistics.allowedTypes['UH-1H'] = { supplies = true, infantry = true,  pilotCapacity = 12}
+PlayerLogistics.allowedTypes['Hercules'] = { supplies = true, infantry = true, pilotCapacity = 92 }
+PlayerLogistics.allowedTypes['UH-60L'] = { supplies = true, infantry = true, pilotCapacity = 11 }
+PlayerLogistics.allowedTypes['Ka-50'] = { supplies = false, infantry = false, pilotCapacity = 0 }
+PlayerLogistics.allowedTypes['Ka-50_3'] = { supplies = false, infantry = false, pilotCapacity = 0  }
+PlayerLogistics.allowedTypes['SA342Mistral'] = { supplies = false, infantry = true, pilotCapacity = 2}
+PlayerLogistics.allowedTypes['SA342L'] = { supplies = false, infantry = true, pilotCapacity = 2}
+PlayerLogistics.allowedTypes['SA342M'] = { supplies = false, infantry = true, pilotCapacity = 2}
+PlayerLogistics.allowedTypes['SA342Minigun'] = { supplies = false, infantry = true, pilotCapacity = 2}
+PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false, infantry = false, pilotCapacity = 0  }
 ```
 - You only need to add the lines for the aircraft you want to change.
 
