@@ -1,9 +1,24 @@
+![Pretense](/images/cover_banner.jpg)
+
 # User Manual
 
----
-:warning: **The mission is not released yet and the manual is still work in progress**
+**Pretense** is my second attempt at a dynamic campaign in DCS. 
 
----
+This mission came from all the things that Foothold failed to live up to in my mind.
+
+I wanted the focus to be on you, the player, as a mercenary pilot in the middle of this war unfolding around you. Your job is to choose from the available missions and complete them, while earning experience and climbing through the ranks.
+
+In this mission bases need resources to upgrade themselves and deploy defenses. Resources that they will now attempt to share with eachother and push towards the frontline where they are needed.
+
+This time AI groups are truly dynamic, each base deciding what to build and where to send it. No waypoints for any of the AI are predetermined in the mission editor. Everything is decided in the moment.
+
+This time the campaign was built with performance in mind. Activity is concentrated on the frontline, bases farther away will operate in a less active mode, but will still be there as functional parts of the economy.
+
+It took more then a year to make this. Burned myself out trying to balance it. I'm still not sure if it works exactly the way I wish it did.
+
+But here it is. Enjoy.
+
+If, after you get the chance to play it a bit, you consider I deserve it, feel free to buy me a [beer](https://www.buymeacoffee.com/dzsek). 
 
 ## 1. The Battlefield
 
@@ -76,7 +91,7 @@ In the case of enemy zones, only the name of the zone will be displayed, unless 
 |Strike|Bombs enemy structures near the frontline|
 |SEAD|Engages air defenses at zones near the frontline|
 |AWACS|Orbits the airbase it is deployed at|Anounces frequency on takeoff|
-|Tanker|:warning:unimplemented|
+|Tanker|Orbits a base farther back from the frontline in a racetrack pattern|
 |Assault|Ground convoy, move on roads, attack connected enemy zones<br/>While inside an enemy zone, will trigger an explosion at a random enemy structure inside the zone<br/>If the zone turns neutral, they will capture it and despawn|
 |Cargo planes|Special missions that periodically fly in from the edge of the map and land at airfields to inject new supplies into the economy|
 
@@ -165,14 +180,14 @@ By default the following aircraft can participate in logistics
 |UH-1H|Yes|Yes|12|
 |SA342|No|Yes|2|
 
-Although community mods are not available in the mission by default, the following mods are suported if you choose to add them.
+Although community mods are not available in the mission by default, the following mods are supported if you choose to add them.
 
 | Aircraft | Can carry supplies | Can carry infantry | CSAR capacity |
 |:---:|:---:|:---:|:---:|
 |Hercules*|Yes|Yes|92|
 |UH-60L|Yes|Yes|11|
 
->*Note that the Hercules cargo drop is not suported at this time, logistics can only be done using the radio menu
+>*Note that the Hercules cargo drop is not supported at this time, logistics can only be done using the radio menu
 
 ## 3. Missions
 
@@ -260,8 +275,8 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 |Recon (Helicopter)| Fly within range of the specified zone and stay within sight of as many enemy units as you can. Objective completes faster the more enemies from the zone are visible to you. Can reveal targets for Strike missions. Will reveal the zones build and resource status on the map for a limited time. | Any helicopter |
 |Supply| Transport specified amount of resources to specified zone | Supply stransport capable aircraft [section 2.4](#24-compatible-aircraft)|
 |Escort| Escort specified friendly convoy on their way between zones. Objective is completed by spending the required time near the convoy, or if the convoy reaches its destination. | Any helicopter|
-|CSAR| :warning: unimplemented | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
-|Extraction| :warning: unimplemented| Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
+|CSAR| Rescue a specified ejected pilot and bring them back to a friendly zone | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
+|Extraction| Extract a specified infantry group once they are ready with their mission, and bring them to a friendly zone | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
 
 ## 4. Finding information while playing
 
