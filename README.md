@@ -265,7 +265,7 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 |TARCAP| Protect the specified players while they accomplish their mission. Mission completion is tied to target missions completion | Fixed wing|
 |CAS| Destroy the specified number of ground units. Some variations need the units to be destoyed at a specific location| Any|
 |BAI| Destroy the specified convoy before it reaches its destination|Any|
-|SEAD| Destroy a radar at the specified zone | Any|
+|SEAD| Destroy a radar at the specified zone. This includes any unit with a search or a track radar. (ex. SA-19, SA-15) | Any|
 |DEAD| Destroy all air defenses at the specified zone| Any|
 |Strike| Destroy either the specified number of structures at a zone, or a specific structure. Specific target missions are made available by completing Recon missions. | Any|
 |Deep Strike| Destroy a specific structure, deep behind enemy lines. Mission made available by completing Deep Recon missions | Any|
@@ -280,9 +280,9 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 
 ## 4. Finding information while playing
 
-### 4.1 Kneeboard - :warning:unimplemented
+### 4.1 Kneeboard
 
-Your kneeboard contains a few pages covering the location of each zone, in alphabetical order.
+Your kneeboard contains a few pages covering the location of each zone, in alphabetical order. These are added to the end of the default kneeboard pages, in reverse order, so that they're easier to find by going backwards from the default kneeboard page.
 
 Should your plane support waypoints, you will also find which waypoint each zone is assigned to by default.
 
@@ -334,7 +334,7 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false, infantry = f
 ```
 - You only need to add the lines for the aircraft you want to change.
 
-- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects.
+- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. Your best bet is to try adjusting the commented values inside BattlefieldManager, specifically the limits of the math.random for x, the boostIntensity variable, and the multiplier variable.
 
 ## 7. Persistence
 This mission comes with persistance, which allows the mission to remember its state when you exit the mission and continue from there once you start it up again.
@@ -368,9 +368,9 @@ end
 
 To reset progress and start the mission from the beginning you can delete the save file. 
 
-This can be found in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`, and its called `pretense_<version>.js`
+This can be found in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`, and its called `pretense_<version>.json`
 
-> Note: AI groups that are restored from a save file will always be at full numbers, even if part of the group was destroyed previously
+> Note: AI groups that are restored from a save file will always be at full numbers and at full loadout, even if part of the group was destroyed previously, or they have expended some of their munitions
 
 ## 8. Running the mission on a server
 
@@ -381,7 +381,7 @@ For players to be prevented from spawning at enemy zones, the included `slotbloc
 
 ### 8.2 Stats file
 
-In addition to the save file the mission also writes to a file called `player_stats.js` in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`
+In addition to the save file the mission also writes to a file called `player_stats.json` in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`
 
 This is a JSON file containing the information about the currently running mission, and is updated once per minute.
 
