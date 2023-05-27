@@ -205,7 +205,7 @@ Each mission on the list has a short description, and most importantly a `4 digi
 
 Missions expire after a few minutes if not taken by anyone, or, if due to changes on the battlefield, they are no longer valid.
 
-Some mission types can have multiple variations with slightly different sets of objectives and difficulties.
+Some mission types can have multiple variations with slightly different sets of objectives and difficulties. Pay attention to the wording of the mission description.
 
 ### 3.2 Accepting, joining and leaving a mission
 
@@ -261,7 +261,7 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 
 | Mission | Description | Available to |
 |:-------:|:------------|:------------:|
-|CAP| Patrol between the specified zones and engage enemies on your way. If multiple players are part of the same mission, all players need to be at the zone simultaneously for the objective to register.| Fixed wing|
+|CAP| Patrol the specified zone(s) and engage enemies on your way.| Fixed wing|
 |TARCAP| Protect the specified players while they accomplish their mission. Mission completion is tied to target missions completion | Fixed wing|
 |CAS| Destroy the specified number of ground units. Some variations need the units to be destoyed at a specific location| Any|
 |BAI| Destroy the specified convoy before it reaches its destination|Any|
