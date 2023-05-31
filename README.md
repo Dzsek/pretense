@@ -95,6 +95,27 @@ In the case of enemy zones, only the name of the zone will be displayed, unless 
 |Assault|Ground convoy, move on roads, attack connected enemy zones<br/>While inside an enemy zone, will trigger an explosion at a random enemy structure inside the zone<br/>If the zone turns neutral, they will capture it and despawn|
 |Cargo planes|Special missions that periodically fly in from the edge of the map and land at airfields to inject new supplies into the economy|
 
+### 1.6 Player Spawns
+
+
+Players can spawn in certain zones as long as it is controlled by the blue coalition. You can find a list of zones that have player spawns below.
+
+|Zone|Aircraft|
+|:--:|:----:|
+|Batumi|All|
+|Cherkessk|Helicopters|
+|Golf|Helicopters|
+|Kobuleti|All|
+|Mineralnye|All|
+|Nalchick|All|
+|November|Helicopters|
+|Senaki|All|
+|Sierra|Helicopters|
+|Tango|Helicopters|
+|Unal|Helicopters|
+
+
+
 ## 2. Logistics
 This section covers only player logistics. For AI logistics see the supply AI mission in section 1.4
 
@@ -388,3 +409,36 @@ This is a JSON file containing the information about the currently running missi
 Information in the file includes players who have played the mission and their XP, what aircraft players are currently flying, and the name of the zones broken down into 3 lists for red, blue, and neutral coalitions.
 
 You can use the information in this file to export a mission status to a discord server or to a website, or whatever other use you can come up with for it.
+
+
+## 9. Issue reporting
+
+If you find any bugs, issues, or you find the campaign does not work according to what is described in this manual, please report them on the Foothold Discord under  [#pretense-bug-reports](https://discord.com/channels/959044877470027848/1031459721313517578) channel. 
+
+Here's a [Discord invite](https://discord.gg/PtPsb9Mpk6) if you are not already a member.
+
+Please only report issues with unmodified versions of this campaign. I can't track down issues caused by modifications. Even if you modified a seemingly unrelated part, it can still cause problems in other unforseen ways.
+
+If you encounter issues with modified versions, your best bet is to either retrace your steps, or redownload the original version.
+
+## 10. FAQ
+
+### 10.1 Is it compatible with IADS, CTLD, etc. scripts?
+
+Most likely not, but cant hurt to try. The campaign is almost exclusively run from scripts, I can not guarantee its compatible with every other script out there.
+
+### 10.2 I've added the hercules mod, but airdropped units just disapear
+
+You need to add the Hercules airdrop script to the mission. It is not added by default.
+
+### 10.3 I've added CTLD/Hercules script, but deployed units are not saved after the mission is restarted.
+
+Units created by 3rd party scripts are not tracked, saved, or restored. Persistence only works with objects created and maintained by the campaign itself.
+
+### 10.4 It's too difficult/too easy
+
+See the last point in [section 6.](#6-editing-the-mission-to-suit-your-needs)
+
+### 10.5 I've conquered all zones up to the mountains but now gameplay has slowed down significantly, and flight times across the mountains are too long.
+
+Yes, geography tends to have that effect. Best thing you can do at this point is concentrate on gaining a foothold in one of the zones across the mountains to have a staging point for ground forces.
