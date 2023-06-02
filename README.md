@@ -160,7 +160,7 @@ Available infrantry squads:
 |Capture| If deployed at a neutral zone, will capture the zone to their side |
 |Sabotage| If deployed to an enemy zone, will trigger an explosion at a random structure within the zone, which in turn destroys a random amount of resources as well in that zone |
 |Ambush| Squad armed with rifles and RPGs that can be deployed anywhere on the battlefield. Can be used to intercept enemy convoys.|
-|Engineers| If deployed at a friendly zone, they will boost production speed in that while reducing costs for anything built at the zone for a limited time.|
+|Engineers| If deployed at a friendly zone, they will boost production speed, while reducing costs for anything built at the zone for a limited time.|
 |MANPADS| Squad armed with rifles for self protection and MANPADS, that can be deployed anywhere on the battlefield. Can be used to provide some protection from enemy aircraft or intercept enemy supply helicopters|
 
 
