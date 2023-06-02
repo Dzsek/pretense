@@ -391,6 +391,8 @@ To reset progress and start the mission from the beginning you can delete the sa
 
 This can be found in `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\`, and its called `pretense_<version>.json`
 
+Player stats, such as XP is stored in a separate file in the same location called `player_stats.json`, and can be reset separately from mission progress as needed.
+
 > Note: AI groups that are restored from a save file will always be at full numbers and at full loadout, even if part of the group was destroyed previously, or they have expended some of their munitions
 
 ## 8. Running the mission on a server
