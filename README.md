@@ -112,6 +112,7 @@ Players can spawn in certain zones as long as it is controlled by the blue coali
 |Senaki|All|
 |Sierra|Helicopters|
 |Tango|Helicopters|
+|Tyrnyauz|Helicopters|
 |Unal|Helicopters|
 
 
