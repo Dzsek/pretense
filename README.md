@@ -445,3 +445,7 @@ See the last point in [section 6.](#6-editing-the-mission-to-suit-your-needs)
 ### 10.5 I've conquered all zones up to the mountains but now gameplay has slowed down significantly, and flight times across the mountains are too long.
 
 Yes, geography tends to have that effect. Best thing you can do at this point is concentrate on gaining a foothold in one of the zones across the mountains to have a staging point for ground forces.
+
+### 10.6 Can I play this in singleplayer?
+
+It is possible to finish the whole campaign in singleplayer, but some areas might prove a bit difficult, depending on what modules you have available to you and your patience and skill.
