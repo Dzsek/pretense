@@ -420,6 +420,8 @@ If you find any bugs, issues, or you find the campaign does not work according t
 
 Here's a [Discord invite](https://discord.gg/PtPsb9Mpk6) if you are not already a member.
 
+Try to include your dcs.log file and your Pretense save file into your bug report if possible.
+
 Please only report issues with unmodified versions of this campaign. I can't track down issues caused by modifications. Even if you modified a seemingly unrelated part, it can still cause problems in other unforseen ways.
 
 If you encounter issues with modified versions, your best bet is to either retrace your steps, or redownload the original version.
