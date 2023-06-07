@@ -451,3 +451,7 @@ Yes, geography tends to have that effect. Best thing you can do at this point is
 ### 10.6 Can I play this in singleplayer?
 
 It is possible to finish the whole campaign in singleplayer, but some areas might prove a bit difficult, depending on what modules you have available to you and your patience and skill.
+
+### 10.7 FC3 aircraft are cold start even in the hot start version of the mission
+
+This is intentional, as FC3 aircraft can not be rearmed with the engines running. The startup is relatively simple and fast anyway.
