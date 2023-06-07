@@ -115,7 +115,17 @@ Players can spawn in certain zones as long as it is controlled by the blue coali
 |Tyrnyauz|Helicopters|
 |Unal|Helicopters|
 
+### 1.7 Capturing a zone
 
+In order to capture a zone, it first needs to turn neutral. This happens when all structures are destroyed in the zone.
+
+Once the zone is neutral it can be captured in one of 3 ways:
+
+- An AI supply convoy or helicopter arrives at the zone
+- An AI assault group is inside the zone for a long enough (~5-10 minutes)
+- A player deploys a capture squad inside the zone and the squad finishes their mission
+
+>Note: Defensive groups do not have to be destroyed for a zone to turn neutral, and they can keep defending the area even after the coalition lost control of the zone.
 
 ## 2. Logistics
 This section covers only player logistics. For AI logistics see the supply AI mission in section 1.4
@@ -175,7 +185,7 @@ Squad stats
 |Engineers|200kg|1000|1 minute|30 minutes*|
 |MANPADS|900kg|500|20 minutes|30 minutes|
 
->*Note that Capture and Engineer squads do not require extraction if they were deployed in accordance with their mission 
+>Note: Capture and Engineer squads do not require extraction if they were deployed in accordance with their mission 
 
 ### 2.3 CSAR (Combat search and rescue)
 
@@ -209,7 +219,7 @@ Although community mods are not available in the mission by default, the followi
 |Hercules*|Yes|Yes|92|
 |UH-60L|Yes|Yes|11|
 
->*Note that the Hercules cargo drop is not supported at this time, logistics can only be done using the radio menu
+>Note: The Hercules cargo drop is not supported at this time, logistics can only be done using the radio menu
 
 ## 3. Missions
 
