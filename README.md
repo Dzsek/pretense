@@ -465,3 +465,15 @@ It is possible to finish the whole campaign in singleplayer, but some areas migh
 ### 10.7 FC3 aircraft are cold start even in the hot start version of the mission
 
 This is intentional, as FC3 aircraft can not be rearmed with the engines running. The startup is relatively simple and fast anyway.
+
+## 11. Changelog
+
+### 6 June 2023
+
+- Initial Release
+
+### 9 June 2023
+
+- Added supply helicopters to Lima 
+- Changed TACAN of tankers to not interfere with datalink
+- Fixed CSAR pilots not registering for logistics functions
