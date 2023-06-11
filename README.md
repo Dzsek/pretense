@@ -482,4 +482,5 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 - Made zone information show up in spectator mode
 - Fixed infantry extraction missions not showing up
+- Fixed incorrect capacity indication for CSAR
 - Added guidance messages to infantry extraction and CSAR missions
