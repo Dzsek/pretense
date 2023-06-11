@@ -468,12 +468,18 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 ## 11. Changelog
 
-### 6 June 2023
+### v1.0 - 6 June 2023 
 
 - Initial Release
 
-### 9 June 2023
+### v1.0.1 - 9 June 2023
 
 - Added supply helicopters to Lima 
 - Changed TACAN of tankers to not interfere with datalink
 - Fixed CSAR pilots not registering for logistics functions
+
+### v1.0.2 - 11 June 2023
+
+- Made zone information show up in spectator mode
+- Fixed infantry extraction missions not showing up
+- Added guidance messages to infantry extraction and CSAR missions
