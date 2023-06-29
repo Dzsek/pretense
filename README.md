@@ -549,3 +549,7 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 ### v1.1.1 - 29 June 2023 (Hotfix)
 
 - Fixed crash on completing mission before player has rank
+
+### v1.1.2 - 29 June 2023 (Hotfix)
+
+- Fixed crash starting strike mission with specific building as target
