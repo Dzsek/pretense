@@ -545,3 +545,7 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Fixed Mi-8 not being able to load anything while front side door is open
 
 > Note: this patch is not compatible with old saves and will reset mission progress.
+
+### v1.1.1 - 29 June 2023 (Hotfix)
+
+- Fixed crash on completing mission before player has rank
