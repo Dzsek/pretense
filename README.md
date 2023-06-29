@@ -169,10 +169,11 @@ Available infrantry squads:
 | Squad | Description |
 |:-----:|:------------|
 |Capture| If deployed at a neutral zone, will capture the zone to their side |
-|Sabotage| If deployed to an enemy zone, will trigger an explosion at a random structure within the zone, which in turn destroys a random amount of resources as well in that zone |
+|Sabotage| If deployed to an enemy zone, will trigger an explosion at the closest structure to them within the zone, which in turn destroys a random amount of resources as well in that zone |
 |Ambush| Squad armed with rifles and RPGs that can be deployed anywhere on the battlefield. Can be used to intercept enemy convoys.|
 |Engineers| If deployed at a friendly zone, they will boost production speed, while reducing costs for anything built at the zone for a limited time.|
 |MANPADS| Squad armed with rifles for self protection and MANPADS, that can be deployed anywhere on the battlefield. Can be used to provide some protection from enemy aircraft or intercept enemy supply helicopters|
+|Spy| Spy disguised as an enemy soldier. If deployed to an enemy zone, will reveal its, and its neighbours, resources and production for 30 minutes.|
 
 
 Squad stats
@@ -184,6 +185,7 @@ Squad stats
 |Ambush|900kg|300|20 minutes|30 minutes|
 |Engineers|200kg|1000|1 minute|30 minutes*|
 |MANPADS|900kg|500|20 minutes|30 minutes|
+|Spy|100kg|300|10 minutes|30 minutes|
 
 >Note: Capture and Engineer squads do not require extraction if they were deployed in accordance with their mission 
 
@@ -309,6 +311,7 @@ Any member who dies or abandones their aircraft will be unassigned from the miss
 |Escort| Escort specified friendly convoy on their way between zones. Objective is completed by spending the required time near the convoy, or if the convoy reaches its destination. | Any helicopter|
 |CSAR| Rescue a specified ejected pilot and bring them back to a friendly zone | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
 |Extraction| Extract a specified infantry group once they are ready with their mission, and bring them to a friendly zone | Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
+|Deploy Squad| Deploy specified squad to specified zone.|Infantry transport capable aircraft [section 2.4](#24-compatible-aircraft)|
 
 ## 4. Finding information while playing
 
@@ -335,12 +338,24 @@ Your stats can be accessed through the `Other->Information->Player` option in th
 
 This currently only contains your name, XP, and rank.
 
-## 5. Player XP and Ranks
+## 5. Player XP, Ranks, and Command tokens
 
 You gain XP by completing missions, killing enemies and delivering resources.
 After a certain amount of XP you will rank up.
 
-XP and ranks do not have a gameplay purpose at the moment. They are just theres for tracking your contributions to the mission and bragging rights.
+Once you reach rank ``E-6`` you will have a chance to earn CMD tokens when you complete a mission. The higher your rank the better your chances.
+
+You can spend CMD tokens using the ``Command & Control`` radio menu. Once you buy an item, it will deduct the displayed number of CMD tokens from your account, and instructions will be displayed on how to use the bought item. For now, all options will direct you to open the radio menu again and select a target for your bought item from a menu of zones on the frontline.
+
+Available CMD items:
+
+|Item|Description|
+|:---:|:----|
+|Smoke markers|Will mark 5 enemies at the zone with red smoke|
+|JTAC|Will spawn a JTAC drone at the chosen zone that will lase enemies for you. Lasts 30 minutes or until the zone runs out of enemies|
+|Priority Zone|The selected zone will become a priority for your coalition. All AI missions will first target this zone if possible, and choose an alternative target if the selected one is not viable. You can use this to prioritize attacks on an enemy zone, captures on a neutral zone, and resupplys on a friendly zone. Lasts about 1 hour |
+|Hack comms|Has a chance to reveal resources and production information of zones near the frontline(success rate 50%)|
+|Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 90%)|
 
 ## 6. Editing the mission to suit your needs
 
@@ -350,7 +365,7 @@ XP and ranks do not have a gameplay purpose at the moment. They are just theres 
 - You **can not** adjust difficulty by deleting AI aircraft from the mission editor. Doing so will result in script errors.
 - Logistics capable aircraft where categorized by what maked logical sense on what they can carry. In case you would like to enable logistics for other aircraft you can do so by adding a doScript action afther the scripts are loaded in the initialization trigger in the mission editor and overriding the values in there like this:
 
-```
+```lua
 PlayerLogistics.allowedTypes['Mi-24P'] = { supplies = true, infantry = true, pilotCapacity = 8 }
 PlayerLogistics.allowedTypes['Mi-8MT'] = { supplies = true, infantry = true, pilotCapacity = 24 }
 PlayerLogistics.allowedTypes['UH-1H'] = { supplies = true, infantry = true,  pilotCapacity = 12}
@@ -366,7 +381,22 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false, infantry = f
 ```
 - You only need to add the lines for the aircraft you want to change.
 
-- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. Your best bet is to try adjusting the commented values inside BattlefieldManager, specifically the limits of the math.random for x, the boostIntensity variable, and the multiplier variable.
+- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. 
+
+## 6.1 Config
+
+You can override some values that have to do with balance by running the following code **before** any other scripts are loaded.
+```lua
+Config = Config or {}
+Config.lossCompensation = 1.0 -- gives advantage to the side with less zones. Set to 0 to disable
+Config.randomBoost = 0.0004 -- adds a random factor to build speeds that changes every 30 minutes, set to 0 to disable
+Config.buildSpeed = 10 -- structure and defense build speed
+Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed
+Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of ai missions
+```
+
+You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
+I recommend only making small changes, only to one value at a time, and playing for a while to see how it feels.
 
 ## 7. Persistence
 This mission comes with persistance, which allows the mission to remember its state when you exit the mission and continue from there once you start it up again.
@@ -374,7 +404,7 @@ This mission comes with persistance, which allows the mission to remember its st
 To enable persistance you have to allow the mission environment inside DCS to read and write to and from your file system. To do this you will need to edit `\Scripts\MissionScripting.lua` inside your DCS or DCS server installation folder.
 
 Change the following section:
-```
+```lua
 do
     sanitizeModule('os')
     sanitizeModule('io')
@@ -385,7 +415,7 @@ do
 end
 ```
 To look like this:
-```
+```lua
 do
     sanitizeModule('os')
     --sanitizeModule('io')
@@ -436,6 +466,12 @@ Please only report issues with unmodified versions of this campaign. I can't tra
 
 If you encounter issues with modified versions, your best bet is to either retrace your steps, or redownload the original version.
 
+### 9.1 Knows issues with 3rd party scripts
+
+- Splash_Damage_2_0 script: objects destroyed by secondary explosions do not count as destroyed by players, preventing the kills form registering for certain objectives
+- CTLD script: objects deployed with ctld scripts are not tracked by the mission and not persisted between restarts
+- Hercules airdrop script: objects spawned from the hercules airdrop are not tracked by the mission and not persisted between restarts
+
 ## 10. FAQ
 
 ### 10.1 Is it compatible with IADS, CTLD, etc. scripts?
@@ -484,3 +520,28 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Fixed infantry extraction missions not showing up
 - Fixed incorrect capacity indication for CSAR
 - Added guidance messages to infantry extraction and CSAR missions
+
+### v1.1 - 29 June 2023
+
+- Added notification when a zone changes owner
+- Added new deployable infantry type: Spy
+- Added CMD token earning chance based on rank
+- Added Command & Control menu (Smoke, JTAC, Set priority zone, Hack enemy comms, Bribe enemy officer)
+- Added simple version of Strike mission (kill any 1 building)
+- Added Deploy Squad mission type
+- Added reason to mission failure message
+- Added persistence for deployed infantry and ejected pilots
+- Added F-15E slots
+- Adjusted altitude of route between Lima and Tyrnyauz as supply helicopters were crashing into mountains
+- Fixed being able to unload extracted squads at enemy or neutral zones
+- Replaced oil pump buildings with old ED model, SA assets were too hard to kill
+- Attempted fix for strike mission failing rarely when target is destroyed by player
+- Sabotage squad now targets closest structure to deploy point
+- Refactored building and defensive group spawning at zones to use script templates instead of ME defined ones
+- Reworked defensive group composition of most zones
+- Zones now spawn a small defensive squad upon capture, this group can not be repaired
+- Mission board will now hide missions that are not compatible with current aircraft
+- Assault convoys will now attempt to disperse upon meeting enemies, instead of just stopping in their tracks
+- Fixed Mi-8 not being able to load anything while front side door is open
+
+> Note: this patch is not compatible with old saves and will reset mission progress.
