@@ -553,3 +553,7 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 ### v1.1.2 - 29 June 2023 (Hotfix)
 
 - Fixed crash starting strike mission with specific building as target
+
+### v1.1.3 - 29 June 2023 (Hotfix)
+
+- Fixed wrong bluefor infantry model being used
