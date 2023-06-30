@@ -1,6 +1,6 @@
 ![Pretense](/images/cover_banner.jpg)
 
-# User Manual
+# User Manual | [English(EN)](README.md) | [简体中文(CN)](README_CN.md)
 
 **Pretense** is my second attempt at a dynamic campaign in DCS. 
 
