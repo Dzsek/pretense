@@ -575,5 +575,5 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 ### v1.1.5 - 2 July 2023
 
 - Fixed CMD points not getting awarded
-- Fixed ground convoy dispers not working
+- Fixed ground convoy disperse not working
 - Fixed aircraft not getting sent home properly
