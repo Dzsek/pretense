@@ -571,3 +571,9 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Slightly Increased distance and altitude limits for hover pickups of ejected pilots (alt 50->70, dist 50->100)
 - Added support for persistence of time and date (see [section 7.1](#71-persistence-for-mission-time-and-weather-randomization))
 - Added support for randomization of weather on startup (see [section 7.1](#71-persistence-for-mission-time-and-weather-randomization))
+
+### v1.1.5 - 2 July 2023
+
+- Fixed CMD points not getting awarded
+- Fixed ground convoy dispers not working
+- Fixed aircraft not getting sent home properly
