@@ -436,6 +436,11 @@ Player stats, such as XP is stored in a separate file in the same location calle
 
 > Note: AI groups that are restored from a save file will always be at full numbers and at full loadout, even if part of the group was destroyed previously, or they have expended some of their munitions
 
+### 7.1 Persistence for mission time and weather randomization
+
+Additional (experimental) persistence can be enable by installing and configuring the [TimePersistence](https://github.com/Dzsek/TimePersistence) mod.
+All settings (time, weather, temperature, wind) are enabled by default. These can be configured by editing the properties of the ``props`` zone int the mission editor near Batumi in the south of Caucasus.
+
 ## 8. Running the mission on a server
 
 ### 8.1 Slotblock
@@ -557,3 +562,18 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 ### v1.1.3 - 29 June 2023 (Hotfix)
 
 - Fixed wrong bluefor infantry model being used
+
+### v1.1.4 - 2 July 2023
+
+- Added closest zone name to BAI, CSAR, Extract and Escort mission targets to mission short description (replaces MGRS)
+- Fixed JTAC clear target and priority menus
+- Attempted fix for ejected pilot replacement spawning in 0,0 position
+- Slightly Increased distance and altitude limits for hover pickups of ejected pilots (alt 50->70, dist 50->100)
+- Added support for persistence of time and date (see [section 7.1](#71-persistence-for-mission-time-and-weather-randomization))
+- Added support for randomization of weather on startup (see [section 7.1](#71-persistence-for-mission-time-and-weather-randomization))
+
+### v1.1.5 - 2 July 2023
+
+- Fixed CMD points not getting awarded
+- Fixed ground convoy disperse not working
+- Fixed aircraft not getting sent home properly
