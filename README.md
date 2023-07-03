@@ -577,3 +577,12 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Fixed CMD points not getting awarded
 - Fixed ground convoy disperse not working
 - Fixed aircraft not getting sent home properly
+
+### v1.1.6 - 3 July 2023
+
+- Removed winds (they were included accidentally)
+- Enabled EPLRS for all AWACS
+
+### v1.1.7 - 3 July 2023
+
+- Fixed another crash on CMD reward
