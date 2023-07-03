@@ -1,8 +1,8 @@
 ![Pretense](/images/cover_banner.jpg)
 
-> 本文档的简体中文版本由 [java160](https://github.com/java160) 使用 ChatGPT 翻译。
+> 本文档的简体中文版本由 [java160](https://github.com/java160) 和 [GoldJohnKing](https://github.com/GoldJohnKing) 使用 ChatGPT 翻译。
 >
-> The Simplified Chinese version of this document was translated by [java160](https://github.com/java160) using ChatGPT.
+> The Simplified Chinese version of this document was translated by [java160](https://github.com/java160) and [GoldJohnKing](https://github.com/GoldJohnKing) using ChatGPT.
 
 # 用户手册 | [English(EN)](README.md) | [简体中文(CN)](README_CN.md)
 
@@ -435,6 +435,11 @@ end
 
 > 注意：从保存文件中恢复的 AI 群组始终是完整数量和完整装备的，即使该群组的一部分先前已被摧毁，或它们已经使用了一些弹药。
 
+### 7.1 任务时间和天气随机化的持久性
+
+可以通过安装和配置[TimePersistence](https://github.com/Dzsek/TimePersistence)模块来启用额外的（实验性的）持久性功能。
+所有设置（时间、天气、温度、风）默认情况下都是启用的。这些设置可以通过编辑位于高加索南部巴统美附近的任务编辑器中的``props``区域的属性来进行配置。
+
 ## 8. 在服务器上运行任务
 
 ### 8.1 Slotblock
@@ -554,3 +559,18 @@ end
 ### v1.1.3 - 2023年6月29日（热修复）
 
 - 修复了使用错误的蓝方步兵模型的问题
+
+### v1.1.4 - 2023年7月2日
+
+- 在任务简介中添加了最接近的区域名称作为BAI、CSAR、Extract和Escort任务目标（替代了MGRS）。
+- 修复了JTAC清除目标和优先级菜单的问题。
+- 尝试修复弹射飞行员替换在0,0位置生成的问题。
+- 稍微增加了对弹射飞行员悬停拾取的距离和高度限制（高度从50增加到70，距离从50增加到100）。
+- 增加了时间和日期持久性的支持（请参阅[第7.1节](#71-任务时间和天气随机化的持久性)）。
+- 增加了启动时天气随机化的支持（请参阅[第7.1节](#71-任务时间和天气随机化的持久性)）。
+
+### v1.1.5 - 2023年7月2日
+
+- 修复了未获得CMD点数的问题。
+- 修复了地面车队分散不起作用的问题。
+- 修复了飞机未正确返回基地的问题。
