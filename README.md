@@ -586,3 +586,8 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 ### v1.1.7 - 3 July 2023
 
 - Fixed another crash on CMD reward
+
+### v.1.1.8 - 4 July 2023
+
+- BAI mission now correctly tracks player kills
+- Fixed crash on CMD reward when completing helicopter missions that end on the ground
