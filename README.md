@@ -587,7 +587,14 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 - Fixed another crash on CMD reward
 
-### v.1.1.8 - 4 July 2023
+### v1.1.8 - 4 July 2023
 
 - BAI mission now correctly tracks player kills
 - Fixed crash on CMD reward when completing helicopter missions that end on the ground
+
+### v1.1.9 - 5 July 2023
+
+- Rebalanced CMD chance
+- Reduced bribe effectiveness to 50%
+- Added marker for zones that have player spawns active
+- Extract pilot menu option now enabled a 1 minute timer in which you can get into the correct parameters for the extract to happen
