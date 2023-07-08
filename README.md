@@ -98,22 +98,7 @@ In the case of enemy zones, only the name of the zone will be displayed, unless 
 ### 1.6 Player Spawns
 
 
-Players can spawn in certain zones as long as it is controlled by the blue coalition. You can find a list of zones that have player spawns below.
-
-|Zone|Aircraft|
-|:--:|:----:|
-|Batumi|All|
-|Cherkessk|Helicopters|
-|Golf|Helicopters|
-|Kobuleti|All|
-|Mineralnye|All|
-|Nalchick|All|
-|November|Helicopters|
-|Senaki|All|
-|Sierra|Helicopters|
-|Tango|Helicopters|
-|Tyrnyauz|Helicopters|
-|Unal|Helicopters|
+Players can spawn in certain zones as long as it is controlled by the blue coalition. These zones are marked on the map with a green outline.
 
 ### 1.7 Capturing a zone
 
@@ -355,7 +340,7 @@ Available CMD items:
 |JTAC|Will spawn a JTAC drone at the chosen zone that will lase enemies for you. Lasts 30 minutes or until the zone runs out of enemies|
 |Priority Zone|The selected zone will become a priority for your coalition. All AI missions will first target this zone if possible, and choose an alternative target if the selected one is not viable. You can use this to prioritize attacks on an enemy zone, captures on a neutral zone, and resupplys on a friendly zone. Lasts about 1 hour |
 |Hack comms|Has a chance to reveal resources and production information of zones near the frontline(success rate 50%)|
-|Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 90%)|
+|Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 50%)|
 
 ## 6. Editing the mission to suit your needs
 
@@ -598,3 +583,8 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Reduced bribe effectiveness to 50%
 - Added marker for zones that have player spawns active
 - Extract pilot menu option now enabled a 1 minute timer in which you can get into the correct parameters for the extract to happen
+
+### v1.1.10 - 8 July 2023
+
+- Fixed persistence when groups saved within target zone
+- Fixed units spawning outside of spawnzones ocasionally
