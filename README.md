@@ -589,7 +589,7 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Fixed persistence when groups saved within target zone
 - Fixed units spawning outside of spawnzones ocasionally
 
-### v1.1.11 - 9 July 20230
+### v1.1.11 - 9 July 2023
 
 - Fixed crash on attempting to spawn blue off map supply cargo plane
 - Fixed crash when bribe command is used
