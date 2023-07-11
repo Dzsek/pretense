@@ -608,3 +608,7 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Added GCI menu
 - Fixed crash on inexistent pilot unit during extract grace period
 - Fixed resource recovery ratio from landed aircraft
+
+### v1.2.1 - 11 July 2023
+
+- Fixed script error when radar somehow detects an inexistent object
