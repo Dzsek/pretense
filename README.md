@@ -321,7 +321,16 @@ Only units that are currently alive are shown in this menu. It can happen that t
 
 Your stats can be accessed through the `Other->Information->Player` option in the radio menu.
 
-This currently only contains your name, XP, and rank.
+This contains your name, XP, CMD tokens, and rank.
+
+### 4.4 GCI menu
+
+The GCI menu lets you set a warning radius around you, in which you will recieve reports of any detected units.
+
+To activate reports you have to choose a warning radius from the `Other->GCI->Set Warning Radius` option in the radio menu.
+You can disable reports using the `Other->GCI->Disable` option.
+
+> Note: This is not an all-seeing eye of Sauron. You will only recieve reports of aircraft that were detected by search radars, early warning radars, and AWACS on your side.
 
 ## 5. Player XP, Ranks, and Command tokens
 
@@ -593,3 +602,9 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 - Fixed crash on attempting to spawn blue off map supply cargo plane
 - Fixed crash when bribe command is used
+
+### v1.2 - 11 July 2023
+
+- Added GCI menu
+- Fixed crash on inexistent pilot unit during extract grace period
+- Fixed resource recovery ratio from landed aircraft
