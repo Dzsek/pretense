@@ -648,5 +648,5 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 - Added support for Hercules Supply and Infantry drops
 - Unified logistics capacity for squads and extracted pilots
-- Now able to load multiple infantry squads as long as capacity allowes it
+- Now able to load multiple infantry squads as long as capacity allows it
 - Added Rapier SAM as a deployable squad
