@@ -650,3 +650,8 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Unified logistics capacity for squads and extracted pilots
 - Now able to load multiple infantry squads as long as capacity allows it
 - Added Rapier SAM as a deployable squad
+
+### v1.3.1 - 15 July 2023
+
+- Accept/Join at the end of the dial menu is now autodetected as long as the code is correct
+- Removed digits 6-9 of dial menu to reduce size of menu. Mission generation adjusted to not use these digits
