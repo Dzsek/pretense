@@ -423,6 +423,14 @@ Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of 
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
 I recommend only making small changes, only to one value at a time, and playing for a while to see how it feels.
 
+## 6.2 Randomized start
+
+You can randomize the campaign when starting a new save by creating an empty file named `randomize.lua` in the `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\` folder.
+
+Next time you start the mission without a save file, it will attempt randomizing the state of the zones.
+
+Note that this is in no way guaranteed to be balanced and your experience may vary. It is intended as a bonus feature, so treat it as such.
+
 ## 7. Persistence
 This mission comes with persistance, which allows the mission to remember its state when you exit the mission and continue from there once you start it up again.
 
@@ -531,6 +539,11 @@ It is possible to finish the whole campaign in singleplayer, but some areas migh
 ### 10.7 FC3 aircraft are cold start even in the hot start version of the mission
 
 This is intentional, as FC3 aircraft can not be rearmed with the engines running. The startup is relatively simple and fast anyway.
+
+### 10.8 Will you do a version for *[insert map]* ?
+
+I probably wont.
+If I will, I wont tell you about it unless it's close to release.
 
 ## 11. Changelog
 
@@ -655,3 +668,15 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 - Accept/Join at the end of the dial menu is now autodetected as long as the code is correct
 - Removed digits 6-9 of dial menu to reduce size of menu. Mission generation adjusted to not use these digits
+
+### v1.3.2 - 17 July 2023
+
+- Reduced speed of tankers
+- Replaced S-3B tanker with KC-130
+- Reaching certain ranks now awards a few CMD points
+- GCI now includes target aspect
+- GCI limited to top 10 contacts
+- GCI now reports altitude in segments of 250m instead of 1000m (if metric is used)
+- Increased spread of SAM spawns from 150m to 300m
+- AI Helicopters will now attempt to engage ground units they encounter on their route, not just at their destingation
+- Added option to randomize the state of the zones when starting a new save (see [section 6.2](#62-randomized-start))
