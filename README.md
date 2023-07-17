@@ -98,22 +98,7 @@ In the case of enemy zones, only the name of the zone will be displayed, unless 
 ### 1.6 Player Spawns
 
 
-Players can spawn in certain zones as long as it is controlled by the blue coalition. You can find a list of zones that have player spawns below.
-
-|Zone|Aircraft|
-|:--:|:----:|
-|Batumi|All|
-|Cherkessk|Helicopters|
-|Golf|Helicopters|
-|Kobuleti|All|
-|Mineralnye|All|
-|Nalchick|All|
-|November|Helicopters|
-|Senaki|All|
-|Sierra|Helicopters|
-|Tango|Helicopters|
-|Tyrnyauz|Helicopters|
-|Unal|Helicopters|
+Players can spawn in certain zones as long as it is controlled by the blue coalition. These zones are marked on the map with a green outline.
 
 ### 1.7 Capturing a zone
 
@@ -140,7 +125,7 @@ To load and unload supply you need to be stationary on the ground, within the li
 
 Each unit of supply weighs 1kg.
 
-Managing supplies onboard your aircraft is done using the `Other->Logistics->Load/Unload supplies` options in the radio menu. This is only available to aircraft that are allowed to carry supplies. A list of compatible aircraft is provided in [section 2.4](#24-compatible-aircraft)
+Managing supplies onboard your aircraft is done using the `Other->Logistics->Supplies->Load/Unload` options in the radio menu. This is only available to aircraft that are allowed to carry supplies. A list of compatible aircraft is provided in [section 2.4](#24-compatible-aircraft)
 
 Loading supplies removes them from the zone.
 Unloading them adds them to the zone.
@@ -151,12 +136,14 @@ Dying or abandoning your aircraft with supplies on board will cause the supplies
 
 Some aircraft are capable of deploying infantry squads with various roles to the battlefield. Every squad has a specific purpose, and once they accomplish their mission, can be extracted back to a friendly zone.
 
-Managing squads onboard your aircraft is done using the `Other->Logistics->Infantry` options in the radio menu. This is only available to aircraft that are allowed to carry infantry. A list of compatible aircraft is provided in [section 2.4](#24-compatible-aircraft)
+Managing squads onboard your aircraft is done using the `Other->Logistics->Infantry->Load/Unload` options in the radio menu. This is only available to aircraft that are allowed to carry infantry. A list of compatible aircraft is provided in [section 2.4](#24-compatible-aircraft)
 
 Loading a squad costs a certain amount of resources from the zone. This is dependant on the type of squad you are trying to load.
 The zone will refuse your request if it is low on resources.
 
-Only a single squad can be loaded at one time. Unloading a squad at the same zone its been loaded at will unload the squad and refund the resources to the zone.
+You can load as many squads as they fit on your aircraft. You can find aircraft capacity below in [section 2.4](#24-compatible-aircraft)
+
+Unloading a squad at the same zone its been loaded at will unload the squad and refund the resources to the zone.
 
 Once a squad is deployed, it will take a certain amount of time until they complete their mission, after which they can be extracted to a friendly zone to recover some resources. 
 
@@ -174,18 +161,20 @@ Available infrantry squads:
 |Engineers| If deployed at a friendly zone, they will boost production speed, while reducing costs for anything built at the zone for a limited time.|
 |MANPADS| Squad armed with rifles for self protection and MANPADS, that can be deployed anywhere on the battlefield. Can be used to provide some protection from enemy aircraft or intercept enemy supply helicopters|
 |Spy| Spy disguised as an enemy soldier. If deployed to an enemy zone, will reveal its, and its neighbours, resources and production for 30 minutes.|
+|Rapier SAM| Small defensive SAM system. Can be deployed anywhere on the battlefield.|
 
 
 Squad stats
 
-| Squad | Weight | Supply cost | Mission duration | Extraction Time limit |
-|:-----:|:------:|:-----------:|:----------------:|:---------------------:|
-|Capture|700kg|200|1 minute|30 minutes*|
-|Sabotage|800kg|500|5 minutes|30 minutes|
-|Ambush|900kg|300|20 minutes|30 minutes|
-|Engineers|200kg|1000|1 minute|30 minutes*|
-|MANPADS|900kg|500|20 minutes|30 minutes|
-|Spy|100kg|300|10 minutes|30 minutes|
+| Squad | Weight | Supply cost | Mission duration | Extraction Time limit | Size |
+|:-----:|:------:|:-----------:|:----------------:|:---------------------:|:----:|
+|Capture|700kg|200|1 minute|30 minutes*|4|
+|Sabotage|800kg|500|5 minutes|30 minutes|4|
+|Ambush|900kg|300|20 minutes|30 minutes|5|
+|Engineers|200kg|1000|1 minute|30 minutes*|2|
+|MANPADS|900kg|500|20 minutes|30 minutes|5|
+|Spy|100kg|300|10 minutes|30 minutes|1|
+|Rapier SAM|1200kg|2000|60 minutes|30 minutes|8|
 
 >Note: Capture and Engineer squads do not require extraction if they were deployed in accordance with their mission 
 
@@ -199,29 +188,57 @@ The `Show info` command will show you bearing and distance to the nearest pilot 
 
 The `Smoke marker` command will tell the nearest pilot to deploy a smoke marker nearby, as a visual aid to help find him. A `Flare` command is also available for low visibility conditions.
 
-To be able to extract a pilot you dont necessarily need to land, but you will need to at least hover close to your target. Once you are in position you can extract your target using the `Extract pilot` command.
+To be able to extract a pilot you dont necessarily need to land, but you will need to at least hover close to your target. Once you are in position you can extract your target using the `Extract pilot` command. This command has a 1 minute grace period in which you can attempt getting within parameters, for the extract to succeed.
 
 You can bring your rescues back to any frienly zone and unload them using the `Unload` command to regain some resources for the zone.
 
-Each aircraft has a maximum amount of rescued pilots that it can hold at one time, this limit is specified below in [section 2.4](#24-compatible-aircraft)
+Each aircraft has a capacity of personnel that it can hold at one time, this limit is specified below in [section 2.4](#24-compatible-aircraft)
 
 ### 2.4 Compatible aircraft
 By default the following aircraft can participate in logistics
-| Aircraft | Can carry supplies | Can carry infantry | CSAR capacity |
-|:---:|:---:|:---:|:---:|
-|Mi-24P|Yes|Yes|8|
-|Mi-8MT|Yes|Yes|24|
-|UH-1H|Yes|Yes|12|
-|SA342|No|Yes|2|
+| Aircraft | Can carry supplies | Personnel capacity |
+|:---:|:---:|:---:|
+|Mi-24P|Yes|8|
+|Mi-8MT|Yes|24|
+|UH-1H|Yes|12|
+|SA342|No|2|
 
 Although community mods are not available in the mission by default, the following mods are supported if you choose to add them.
 
-| Aircraft | Can carry supplies | Can carry infantry | CSAR capacity |
-|:---:|:---:|:---:|:---:|
-|Hercules*|Yes|Yes|92|
-|UH-60L|Yes|Yes|11|
+| Aircraft | Can carry supplies | Personnel capacity |
+|:---:|:---:|:---:|
+|Hercules*|Yes|92|
+|UH-60L|Yes|12|
 
->Note: The Hercules cargo drop is not supported at this time, logistics can only be done using the radio menu
+### 2.5 Hercules mod airdrop support
+
+If you add the Hercules mod, supply and infantry squad air drops are enabled by default.
+
+You need to follow a few steps for this to correctly function:
+1. Load the `Generic Crate [20000lb]` cargo onto your aircraft, as many as you desire
+2a. Load supplies from the `Other->Logistics->Supplies->Load/Unload` option in the radio menu
+2b. Load infantrysquads from the `Other->Logistics->Infantry->Load/Unload` option in the radio menu
+3. Drop the crate as you would normally over a zone. Make sure it lands on a clear area and not over trees/buildings.
+
+Supplies loaded onto the aircraft are packed inside the crates until they fill the capacity of whatever number of crates you have loaded.
+
+Supplies loaded into crates do not add aditional weight to the aircraft. (The weight is already provided by the crate)
+
+Supply crates that collide with trees, buildings or units during their descent, or crates that land outside of a zone will be lost.
+
+For the weight calculation to work, supplies most be loaded from the logistics menu **after** the crates have been loaded onto the aircraft. Failing to do so will result in incorrect weight being applied until the next time supplies are loaded/unloaded using the logistics menu.
+
+Each crate object will hold a maximum of 9000 units of supplies.
+
+Each crate dropped is loaded with as many supplies as possible up to its maximum, and depending on how much supply is loaded on the aircraft. 
+
+Example:
+- 3 crates on board and 15000 supplies loaded
+- First crate dropped contains 9000 supplies, aircraft left with 6000 suppies
+- Second crate dropped contains 5000 supplies, aircraft left with 0 supplies
+- Third crate dropped contains 0 supplies, aircraft still at 0 supplies
+
+Infantry squads can be deployed the same way. Each dropped crate will auto select one of the loaded infantry squads. You can prepare a specific squad manually using the `Other->Logistics->Loadmaster` option in the radio menu. After your prepared squad is dropped, the next one will be auto selected again, unless you prepare a new one.
 
 ## 3. Missions
 
@@ -336,7 +353,16 @@ Only units that are currently alive are shown in this menu. It can happen that t
 
 Your stats can be accessed through the `Other->Information->Player` option in the radio menu.
 
-This currently only contains your name, XP, and rank.
+This contains your name, XP, CMD tokens, and rank.
+
+### 4.4 GCI menu
+
+The GCI menu lets you set a warning radius around you, in which you will recieve reports of any detected units.
+
+To activate reports you have to choose a warning radius from the `Other->GCI->Set Warning Radius` option in the radio menu.
+You can disable reports using the `Other->GCI->Disable` option.
+
+> Note: This is not an all-seeing eye of Sauron. You will only recieve reports of aircraft that were detected by search radars, early warning radars, and AWACS on your side.
 
 ## 5. Player XP, Ranks, and Command tokens
 
@@ -355,7 +381,7 @@ Available CMD items:
 |JTAC|Will spawn a JTAC drone at the chosen zone that will lase enemies for you. Lasts 30 minutes or until the zone runs out of enemies|
 |Priority Zone|The selected zone will become a priority for your coalition. All AI missions will first target this zone if possible, and choose an alternative target if the selected one is not viable. You can use this to prioritize attacks on an enemy zone, captures on a neutral zone, and resupplys on a friendly zone. Lasts about 1 hour |
 |Hack comms|Has a chance to reveal resources and production information of zones near the frontline(success rate 50%)|
-|Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 90%)|
+|Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 50%)|
 
 ## 6. Editing the mission to suit your needs
 
@@ -366,18 +392,17 @@ Available CMD items:
 - Logistics capable aircraft where categorized by what maked logical sense on what they can carry. In case you would like to enable logistics for other aircraft you can do so by adding a doScript action afther the scripts are loaded in the initialization trigger in the mission editor and overriding the values in there like this:
 
 ```lua
-PlayerLogistics.allowedTypes['Mi-24P'] = { supplies = true, infantry = true, pilotCapacity = 8 }
-PlayerLogistics.allowedTypes['Mi-8MT'] = { supplies = true, infantry = true, pilotCapacity = 24 }
-PlayerLogistics.allowedTypes['UH-1H'] = { supplies = true, infantry = true,  pilotCapacity = 12}
-PlayerLogistics.allowedTypes['Hercules'] = { supplies = true, infantry = true, pilotCapacity = 92 }
-PlayerLogistics.allowedTypes['UH-60L'] = { supplies = true, infantry = true, pilotCapacity = 11 }
-PlayerLogistics.allowedTypes['Ka-50'] = { supplies = false, infantry = false, pilotCapacity = 0 }
-PlayerLogistics.allowedTypes['Ka-50_3'] = { supplies = false, infantry = false, pilotCapacity = 0  }
-PlayerLogistics.allowedTypes['SA342Mistral'] = { supplies = false, infantry = true, pilotCapacity = 2}
-PlayerLogistics.allowedTypes['SA342L'] = { supplies = false, infantry = true, pilotCapacity = 2}
-PlayerLogistics.allowedTypes['SA342M'] = { supplies = false, infantry = true, pilotCapacity = 2}
-PlayerLogistics.allowedTypes['SA342Minigun'] = { supplies = false, infantry = true, pilotCapacity = 2}
-PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false, infantry = false, pilotCapacity = 0  }
+PlayerLogistics.allowedTypes['Mi-24P'] = { supplies = true, personCapacity = 8 }
+PlayerLogistics.allowedTypes['Mi-8MT'] = { supplies = true, personCapacity = 24 }
+PlayerLogistics.allowedTypes['UH-1H'] = { supplies = true, personCapacity = 12}
+PlayerLogistics.allowedTypes['Hercules'] = { supplies = true, personCapacity = 92 }
+PlayerLogistics.allowedTypes['UH-60L'] = { supplies = true, personCapacity = 12 }
+PlayerLogistics.allowedTypes['Ka-50'] = { supplies = false }
+PlayerLogistics.allowedTypes['Ka-50_3'] = { supplies = false }
+PlayerLogistics.allowedTypes['SA342L'] = { supplies = false, personCapacity = 2}
+PlayerLogistics.allowedTypes['SA342M'] = { supplies = false, personCapacity = 2}
+PlayerLogistics.allowedTypes['SA342Minigun'] = { supplies = false, personCapacity = 2}
+PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 ```
 - You only need to add the lines for the aircraft you want to change.
 
@@ -577,3 +602,56 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 - Fixed CMD points not getting awarded
 - Fixed ground convoy disperse not working
 - Fixed aircraft not getting sent home properly
+
+### v1.1.6 - 3 July 2023
+
+- Removed winds (they were included accidentally)
+- Enabled EPLRS for all AWACS
+
+### v1.1.7 - 3 July 2023
+
+- Fixed another crash on CMD reward
+
+### v1.1.8 - 4 July 2023
+
+- BAI mission now correctly tracks player kills
+- Fixed crash on CMD reward when completing helicopter missions that end on the ground
+
+### v1.1.9 - 5 July 2023
+
+- Rebalanced CMD chance
+- Reduced bribe effectiveness to 50%
+- Added marker for zones that have player spawns active
+- Extract pilot menu option now enabled a 1 minute timer in which you can get into the correct parameters for the extract to happen
+
+### v1.1.10 - 8 July 2023
+
+- Fixed persistence when groups saved within target zone
+- Fixed units spawning outside of spawnzones ocasionally
+
+### v1.1.11 - 9 July 2023
+
+- Fixed crash on attempting to spawn blue off map supply cargo plane
+- Fixed crash when bribe command is used
+
+### v1.2 - 11 July 2023
+
+- Added GCI menu
+- Fixed crash on inexistent pilot unit during extract grace period
+- Fixed resource recovery ratio from landed aircraft
+
+### v1.2.1 - 11 July 2023
+
+- Fixed script error when radar somehow detects an inexistent object
+
+### v1.3 - 13 July 2023
+
+- Added support for Hercules Supply and Infantry drops
+- Unified logistics capacity for squads and extracted pilots
+- Now able to load multiple infantry squads as long as capacity allows it
+- Added Rapier SAM as a deployable squad
+
+### v1.3.1 - 15 July 2023
+
+- Accept/Join at the end of the dial menu is now autodetected as long as the code is correct
+- Removed digits 6-9 of dial menu to reduce size of menu. Mission generation adjusted to not use these digits
