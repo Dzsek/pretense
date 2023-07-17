@@ -678,5 +678,5 @@ If I will, I wont tell you about it unless it's close to release.
 - GCI limited to top 10 contacts
 - GCI now reports altitude in segments of 250m instead of 1000m (if metric is used)
 - Increased spread of SAM spawns from 150m to 300m
-- AI Helicopters will now attempt to engage ground units they encounter on their route, not just at their destingation
+- AI Helicopters will now attempt to engage ground units they encounter on their route, not just at their destination
 - Added option to randomize the state of the zones when starting a new save (see [section 6.2](#62-randomized-start))
