@@ -1,4 +1,5 @@
 ![Pretense](/images/cover_banner.jpg)
+![Pretense Syria](/images/cover_syria_banner.jpg)
 
 # User Manual | [English(EN)](README.md) | [简体中文(CN)](README_CN.md)
 
@@ -679,4 +680,8 @@ If I will, I wont tell you about it unless it's close to release.
 - GCI now reports altitude in segments of 250m instead of 1000m (if metric is used)
 - Increased spread of SAM spawns from 150m to 300m
 - AI Helicopters will now attempt to engage ground units they encounter on their route, not just at their destination
+<<<<<<< Updated upstream
 - Added option to randomize the state of the zones when starting a new save (see [section 6.2](#62-randomized-start))
+=======
+- Added option to randomize the state of the zones when starting a new save (see [section 6.2](#62-randomized-start))
+>>>>>>> Stashed changes
