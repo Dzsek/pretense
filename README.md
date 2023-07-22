@@ -680,8 +680,18 @@ If I will, I wont tell you about it unless it's close to release.
 - GCI now reports altitude in segments of 250m instead of 1000m (if metric is used)
 - Increased spread of SAM spawns from 150m to 300m
 - AI Helicopters will now attempt to engage ground units they encounter on their route, not just at their destination
-<<<<<<< Updated upstream
 - Added option to randomize the state of the zones when starting a new save (see [section 6.2](#62-randomized-start))
-=======
-- Added option to randomize the state of the zones when starting a new save (see [section 6.2](#62-randomized-start))
->>>>>>> Stashed changes
+
+### Caucasus V1.3.3 - 22 July 2023
+
+- Fixed groups despawned due to getting blocked not refunding resources
+- Deploy Squad mission now only gives instant rewards when deploying Engineers
+- Fixed 50% fuel on one of the F-15E slots in Batumi
+- Corrected tanker speed
+
+### Syria V1.0.1 - 22 July 2023
+
+- Fixed groups despawned due to getting blocked not refunding resources
+- Deploy Squad mission now only gives instant rewards when deploying Engineers
+- Removed fuel tanks from MB-339 AIs on Kiryat to allow it to take off on the short runway.
+- Marked Jasim as a spawn point
