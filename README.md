@@ -695,3 +695,15 @@ If I will, I wont tell you about it unless it's close to release.
 - Deploy Squad mission now only gives instant rewards when deploying Engineers
 - Removed fuel tanks from MB-339 AIs on Kiryat to allow it to take off on the short runway.
 - Marked Jasim as a spawn point
+
+### Caucasus V1.3.4 - 2 Aug 2023
+
+- Fixed crash when CSAR target despawns or is destroyed mid mission
+- Added message for when Hercules cargo drop fails due to the crate crashing into something
+
+### Syria V1.0.2 - 2 Aug 2023
+
+- Fixed crash when CSAR target despawns or is destroyed mid mission
+- Adjusted spawn pos of El Taebah convoys to reduce chance of blockage
+- Adjusted client Su-25 at Kiryat to stop it from rolling off the taxiway on spawn
+- Added message for when Hercules cargo drop fails due to the crate crashing into something
