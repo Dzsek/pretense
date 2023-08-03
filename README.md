@@ -236,7 +236,7 @@ Each crate dropped is loaded with as many supplies as possible up to its maximum
 Example:
 - 3 crates on board and 15000 supplies loaded
 - First crate dropped contains 9000 supplies, aircraft left with 6000 suppies
-- Second crate dropped contains 5000 supplies, aircraft left with 0 supplies
+- Second crate dropped contains 6000 supplies, aircraft left with 0 supplies
 - Third crate dropped contains 0 supplies, aircraft still at 0 supplies
 
 Infantry squads can be deployed the same way. Each dropped crate will auto select one of the loaded infantry squads. You can prepare a specific squad manually using the `Other->Logistics->Loadmaster` option in the radio menu. After your prepared squad is dropped, the next one will be auto selected again, unless you prepare a new one.
