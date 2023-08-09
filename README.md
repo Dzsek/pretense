@@ -1,5 +1,6 @@
-![Pretense](/images/cover_banner.jpg)
-![Pretense Syria](/images/cover_syria_banner.jpg)
+[![Pretense](/images/cover_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/3331159/)
+[![Pretense Syria Cold War](/images/cover_syria_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/3332140/)
+[![Pretense Syria](/images/cover_syria_modern_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/filter/user-is-dzsekeb/apply/)
 
 # User Manual | [English(EN)](README.md) | [简体中文(CN)](README_CN.md)
 
@@ -416,9 +417,10 @@ You can override some values that have to do with balance by running the followi
 Config = Config or {}
 Config.lossCompensation = 1.0 -- gives advantage to the side with less zones. Set to 0 to disable
 Config.randomBoost = 0.0004 -- adds a random factor to build speeds that changes every 30 minutes, set to 0 to disable
-Config.buildSpeed = 10 -- structure and defense build speed
-Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed
-Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of ai missions
+Config.buildSpeed = 10 -- structure and defense build speed (smaller number longer build times)
+Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed (smaller number longer build times)
+Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of ai missions (smaller number longer build times)
+Config.maxDistFromFront = Config.maxDistFromFront or 129640 -- max distance in meters from front after which zone is forced into low activity state (export mode)
 ```
 
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
@@ -590,19 +592,19 @@ If I will, I wont tell you about it unless it's close to release.
 
 > Note: this patch is not compatible with old saves and will reset mission progress.
 
-### v1.1.1 - 29 June 2023 (Hotfix)
+### Caucasus v1.1.1 - 29 June 2023
 
 - Fixed crash on completing mission before player has rank
 
-### v1.1.2 - 29 June 2023 (Hotfix)
+### Caucasus v1.1.2 - 29 June 2023
 
 - Fixed crash starting strike mission with specific building as target
 
-### v1.1.3 - 29 June 2023 (Hotfix)
+### Caucasus v1.1.3 - 29 June 2023
 
 - Fixed wrong bluefor infantry model being used
 
-### v1.1.4 - 2 July 2023
+### Caucasus v1.1.4 - 2 July 2023
 
 - Added closest zone name to BAI, CSAR, Extract and Escort mission targets to mission short description (replaces MGRS)
 - Fixed JTAC clear target and priority menus
@@ -611,66 +613,66 @@ If I will, I wont tell you about it unless it's close to release.
 - Added support for persistence of time and date (see [section 7.1](#71-persistence-for-mission-time-and-weather-randomization))
 - Added support for randomization of weather on startup (see [section 7.1](#71-persistence-for-mission-time-and-weather-randomization))
 
-### v1.1.5 - 2 July 2023
+### Caucasus v1.1.5 - 2 July 2023
 
 - Fixed CMD points not getting awarded
 - Fixed ground convoy disperse not working
 - Fixed aircraft not getting sent home properly
 
-### v1.1.6 - 3 July 2023
+### Caucasus v1.1.6 - 3 July 2023
 
 - Removed winds (they were included accidentally)
 - Enabled EPLRS for all AWACS
 
-### v1.1.7 - 3 July 2023
+### Caucasus v1.1.7 - 3 July 2023
 
 - Fixed another crash on CMD reward
 
-### v1.1.8 - 4 July 2023
+### Caucasus v1.1.8 - 4 July 2023
 
 - BAI mission now correctly tracks player kills
 - Fixed crash on CMD reward when completing helicopter missions that end on the ground
 
-### v1.1.9 - 5 July 2023
+### Caucasus v1.1.9 - 5 July 2023
 
 - Rebalanced CMD chance
 - Reduced bribe effectiveness to 50%
 - Added marker for zones that have player spawns active
 - Extract pilot menu option now enabled a 1 minute timer in which you can get into the correct parameters for the extract to happen
 
-### v1.1.10 - 8 July 2023
+### Caucasus v1.1.10 - 8 July 2023
 
 - Fixed persistence when groups saved within target zone
 - Fixed units spawning outside of spawnzones ocasionally
 
-### v1.1.11 - 9 July 2023
+### Caucasus v1.1.11 - 9 July 2023
 
 - Fixed crash on attempting to spawn blue off map supply cargo plane
 - Fixed crash when bribe command is used
 
-### v1.2 - 11 July 2023
+### Caucasus v1.2 - 11 July 2023
 
 - Added GCI menu
 - Fixed crash on inexistent pilot unit during extract grace period
 - Fixed resource recovery ratio from landed aircraft
 
-### v1.2.1 - 11 July 2023
+### Caucasus v1.2.1 - 11 July 2023
 
 - Fixed script error when radar somehow detects an inexistent object
 
-### v1.3 - 13 July 2023
+### Caucasus v1.3 - 13 July 2023
 
 - Added support for Hercules Supply and Infantry drops
 - Unified logistics capacity for squads and extracted pilots
 - Now able to load multiple infantry squads as long as capacity allows it
 - Added Rapier SAM as a deployable squad
 
-### v1.3.1 - 15 July 2023
+### Caucasus v1.3.1 - 15 July 2023
 
 - Accept/Join at the end of the dial menu is now autodetected as long as the code is correct
 - Removed digits 6-9 of dial menu to reduce size of menu. Mission generation adjusted to not use these digits
 
-### v1.3.2 - 17 July 2023
+### Caucasus v1.3.2 - 17 July 2023
 
 - Reduced speed of tankers
 - Replaced S-3B tanker with KC-130
@@ -689,7 +691,7 @@ If I will, I wont tell you about it unless it's close to release.
 - Fixed 50% fuel on one of the F-15E slots in Batumi
 - Corrected tanker speed
 
-### Syria V1.0.1 - 22 July 2023
+### Syria Cold War V1.0.1 - 22 July 2023
 
 - Fixed groups despawned due to getting blocked not refunding resources
 - Deploy Squad mission now only gives instant rewards when deploying Engineers
@@ -701,9 +703,27 @@ If I will, I wont tell you about it unless it's close to release.
 - Fixed crash when CSAR target despawns or is destroyed mid mission
 - Added message for when Hercules cargo drop fails due to the crate crashing into something
 
-### Syria V1.0.2 - 2 Aug 2023
+### Syria Cold War V1.0.2 - 2 Aug 2023
 
 - Fixed crash when CSAR target despawns or is destroyed mid mission
 - Adjusted spawn pos of El Taebah convoys to reduce chance of blockage
 - Adjusted client Su-25 at Kiryat to stop it from rolling off the taxiway on spawn
 - Added message for when Hercules cargo drop fails due to the crate crashing into something
+
+
+### Caucasus V1.3.5 - 9 Aug 2023
+
+- Fixed TARCAP target player list not showing
+- JTAC now lasts 60 minutes
+- Fixed AI patrol missions choosing enemy zones to patrol
+- Zones that are more then 70 nm away and more then 4 hops away from the frontline will now go to export operating mode even if they would otherwise be forced to stay active, these will still build aircraft in export mode
+- Zones now get instantly built up if they get bumped up to normal operating mode, as far as the resources allow it
+
+### Syria Cold War V1.0.3 - 9 Aug 2023
+
+- Fixed TARCAP target player list not showing
+- Fixed AI patrol missions choosing enemy zones to patrol
+- Fixed some AI patrols having wrong default task
+- Adjusted fuel of helicopters to 50%
+- Zones that are more then 70 nm away and more then 4 hops away from the frontline will now go to export operating mode even if they would otherwise be forced to stay active, these will still build aircraft in export mode
+- Zones now get instantly built up if they get bumped up to normal operating mode, as far as the resources allow it
