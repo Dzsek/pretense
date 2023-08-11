@@ -1,6 +1,6 @@
 [![Pretense](/images/cover_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/3331159/)
 [![Pretense Syria Cold War](/images/cover_syria_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/3332140/)
-[![Pretense Syria](/images/cover_syria_modern_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/filter/user-is-dzsekeb/apply/)
+[![Pretense Syria](/images/cover_syria_modern_banner.jpg)](https://www.digitalcombatsimulator.com/en/files/3332520/)
 
 # User Manual | [English(EN)](README.md) | [简体中文(CN)](README_CN.md)
 
