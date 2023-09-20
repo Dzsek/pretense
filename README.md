@@ -727,3 +727,32 @@ If I will, I wont tell you about it unless it's close to release.
 - Adjusted fuel of helicopters to 50%
 - Zones that are more then 70 nm away and more then 4 hops away from the frontline will now go to export operating mode even if they would otherwise be forced to stay active, these will still build aircraft in export mode
 - Zones now get instantly built up if they get bumped up to normal operating mode, as far as the resources allow it
+
+### Caucasus V1.3.6 - 20 Sept 2023
+
+- Fixed crash when player C130 dies before cargo crates hit the ground
+- Airbases and FARPs now forced to same coalition as zone
+- Corrected squad extraction smoke color to Blue as per manual
+- Corrected Hercules cargo drop position calculation
+- Squads now spawn a bit further from the helicopter
+- Fixed crash on trying to restore a zone from culling but zone is neutral
+
+### Syria Cold War V1.0.4 - 20 Sept 2023
+
+- Fixed crash when player C130 dies before cargo crates hit the ground
+- Airbases and FARPs now forced to same coalition as zone
+- Corrected squad extraction smoke color to Blue as per manual
+- Corrected Hercules cargo drop position calculation
+- Squads now spawn a bit further from the helicopter
+- Fixed crash on trying to restore a zone from culling but zone is neutral
+
+### Syria V1.0.1 - 20 Sept 2023
+
+- Fixed crash when player C130 dies before cargo crates hit the ground
+- Airbases and FARPs now forced to same coalition as zone
+- Corrected squad extraction smoke color to Blue as per manual
+- Corrected Hercules cargo drop position calculation
+- Squads now spawn a bit further from the helicopter
+- Fixed crash on trying to restore a zone from culling but zone is neutral
+- F-14B player spawns now have INS fast align enabled
+- Added missing JTAC option
