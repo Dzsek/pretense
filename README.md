@@ -488,7 +488,7 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 
 - There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. 
 
-## 6.1 Config
+### 6.1 Config
 
 You can override some values that have to do with balance by running the following code **before** any other scripts are loaded.
 ```lua
@@ -504,7 +504,7 @@ Config.maxDistFromFront = Config.maxDistFromFront or 129640 -- max distance in m
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
 I recommend only making small changes, only to one value at a time, and playing for a while to see how it feels.
 
-## 6.2 Randomized start
+### 6.2 Randomized start
 
 You can randomize the campaign when starting a new save by creating an empty file named `randomize.lua` in the `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\` folder.
 
