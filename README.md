@@ -22,6 +22,84 @@ But here it is. Enjoy.
 
 If, after you get the chance to play it a bit, you consider I deserve it, feel free to buy me a [beer](https://www.buymeacoffee.com/dzsek). 
 
+## Contents
+
+1. [The Battlefield](#1-the-battlefield)
+    1. [Zones](#11-zones)
+    2. [Resources](#12-resources)
+    3. [Production](#13-production)
+    4. [Zone labels](#14-zone-labels)
+    5. [AI Mission types](#15-ai-mission-types)
+    6. [Player Spawns](#16-player-spawns)
+    7. [Capturing a zone](#17-capturing-a-zone)
+2. [Logistics](#2-logistics)
+    1. [Supplies](#21-supplies)
+    2. [Infantry](#22-infantry)
+    3. [CSAR](#23-csar-combat-search-and-rescue)
+    4. [Compatible aircraft](#24-compatible-aircraft)
+    5. [Hercules mod airdrop support](#25-hercules-mod-airdrop-support)
+3. [Missions](#3-missions)
+    1. [The mission board](#31-the-mission-board)
+    2. [Accepting, joining and leaving a mission](#32-accepting-joining-and-leaving-a-mission)
+    3. [Starting and completing a mission](#33-starting-and-completing-a-mission)
+    4. [Failed missions](#34-failed-missions)
+    5. [Mission Types](#35-mission-types)
+4. [Finding information while playing](#4-finding-information-while-playing)
+    1. [Kneeboard](#41-kneeboard)
+    2. [Radio Channels](#42-radio-channels)
+    3. [Player information](#43-player-information)
+    4. [GCI menu](#44-gci-menu)
+5. [Player XP, Ranks, and Command tokens](#5-player-xp-ranks-and-command-tokens)
+6. [Editing the mission to suit your needs](#6-editing-the-mission-to-suit-your-needs)
+    1. [Config](#61-config)
+    2. [Randomized start](#62-randomized-start)
+7. [Persistence](#7-persistence)
+    1. [Persistence for mission time and weather randomization](#71-persistence-for-mission-time-and-weather-randomization)
+8. [Running the mission on a server](#8-running-the-mission-on-a-server)
+    1. [Slotblock](#81-slotblock)
+    2. [Stats file](#82-stats-file)
+9. [Issue reporting](#9-issue-reporting)
+    1. [Knows issues with 3rd party scripts](#91-knows-issues-with-3rd-party-scripts)
+10. [FAQ](#10-faq)
+    1. [Is it compatible with IADS, CTLD, etc. scripts?](#101-is-it-compatible-with-iads-ctld-etc-scripts)
+    2. [I've added the hercules mod, but airdropped units just disapear](#102-ive-added-the-hercules-mod-but-airdropped-units-just-disapear)
+    3. [I've added CTLD/Hercules script, but deployed units are not saved after the mission is restarted.](#103-ive-added-ctldhercules-script-but-deployed-units-are-not-saved-after-the-mission-is-restarted)
+    4. [It's too difficult/too easy](#104-its-too-difficulttoo-easy)
+    5. [I've conquered all zones up to the mountains but now gameplay has slowed down significantly, and flight times across the mountains are too long.](#105-ive-conquered-all-zones-up-to-the-mountains-but-now-gameplay-has-slowed-down-significantly-and-flight-times-across-the-mountains-are-too-long)
+    6. [Can I play this in singleplayer?](#106-can-i-play-this-in-singleplayer)
+    7. [FC3 aircraft are cold start even in the hot start version of the mission](#107-fc3-aircraft-are-cold-start-even-in-the-hot-start-version-of-the-mission)
+    8. [Will you do a version for *[insert map]* ?](#108-will-you-do-a-version-for-insert-map)
+11. [Changelog](#11-changelog)
+    - [v1.0 - 6 June 2023 ](#v10---6-june-2023)
+    - [v1.0.1 - 9 June 2023](#v101---9-june-2023)
+    - [v1.0.2 - 11 June 2023](#v102---11-june-2023)
+    - [v1.1 - 29 June 2023](#v11---29-june-2023)
+    - [Caucasus v1.1.1 - 29 June 2023](#caucasus-v111---29-june-2023)
+    - [Caucasus v1.1.2 - 29 June 2023](#caucasus-v112---29-june-2023)
+    - [Caucasus v1.1.3 - 29 June 2023](#caucasus-v113---29-june-2023)
+    - [Caucasus v1.1.4 - 2 July 2023](#caucasus-v114---2-july-2023)
+    - [Caucasus v1.1.5 - 2 July 2023](#caucasus-v115---2-july-2023)
+    - [Caucasus V1.1.6 - 3 July 2023](#caucasus-v116---3-july-2023)
+    - [Caucasus v1.1.7 - 3 July 2023](#caucasus-v117---3-july-2023)
+    - [Caucasus v1.1.8 - 4 July 2023](#caucasus-v118---4-july-2023)
+    - [Caucasus v1.1.9 - 5 July 2023](#caucasus-v119---5-july-2023)
+    - [Caucasus v1.1.10 - 8 July 2023](#caucasus-v1110---8-july-2023)
+    - [Caucasus v1.1.11 - 9 July 2023](#caucasus-v1111---9-july-2023)
+    - [Caucasus v1.2 - 11 July 2023](#caucasus-v12---11-july-2023)
+    - [Caucasus v1.2.1 - 11 July 2023](#caucasus-v121---11-july-2023)
+    - [Caucasus v1.3 - 13 July 2023](#caucasus-v13---13-july-2023)
+    - [Caucasus v1.3.1 - 15 July 2023](#caucasus-v131---15-july-2023)
+    - [Caucasus v1.3.2 - 17 July 2023](#caucasus-v132---17-july-2023)
+    - [Caucasus V1.3.3 - 22 July 2023](#caucasus-v133---22-july-2023)
+    - [Syria Cold War V1.0.1 - 22 July 2023](#syria-cold-war-v101---22-july-2023)
+    - [Caucasus V1.3.4 - 2 Aug 2023](#caucasus-v134---2-aug-2023)
+    - [Syria Cold War V1.0.2 - 2 Aug 2023](#syria-cold-war-v102---2-aug-2023)
+    - [Caucasus V1.3.5 - 9 Aug 2023](#caucasus-v135---9-aug-2023)
+    - [Syria Cold War V1.0.3 - 9 Aug 2023](#syria-cold-war-v103---9-aug-2023)
+    - [Caucasus V1.3.6 - 20 Sept 2023](#caucasus-v136---20-sept-2023)
+    - [Syria Cold War V1.0.4 - 20 Sept 2023](#syria-cold-war-v104---20-sept-2023)
+    - [Syria V1.0.1 - 20 Sept 2023](#syria-v101---20-sept-2023)
+
 ## 1. The Battlefield
 
 These are some general rules on how the mission functions.
@@ -410,7 +488,7 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 
 - There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. 
 
-## 6.1 Config
+### 6.1 Config
 
 You can override some values that have to do with balance by running the following code **before** any other scripts are loaded.
 ```lua
@@ -426,7 +504,7 @@ Config.maxDistFromFront = Config.maxDistFromFront or 129640 -- max distance in m
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
 I recommend only making small changes, only to one value at a time, and playing for a while to see how it feels.
 
-## 6.2 Randomized start
+### 6.2 Randomized start
 
 You can randomize the campaign when starting a new save by creating an empty file named `randomize.lua` in the `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\` folder.
 
