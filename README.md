@@ -99,6 +99,9 @@ If, after you get the chance to play it a bit, you consider I deserve it, feel f
     - [Caucasus V1.3.6 - 20 Sept 2023](#caucasus-v136---20-sept-2023)
     - [Syria Cold War V1.0.4 - 20 Sept 2023](#syria-cold-war-v104---20-sept-2023)
     - [Syria V1.0.1 - 20 Sept 2023](#syria-v101---20-sept-2023)
+    - [Caucasus V1.3.7 - 1 Dec 2023](#caucasus-v137---1-dec-2023)
+    - [Syria Cold War V1.0.5 - 1 Dec 2023](#syria-cold-war-v105---1-dec-2023)
+    - [Syria V1.0.2 - 1 Dec 2023](#syria-v102---1-dec-2023)
 
 ## 1. The Battlefield
 
@@ -488,7 +491,7 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 
 - There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. 
 
-### 6.1 Config
+## 6.1 Config
 
 You can override some values that have to do with balance by running the following code **before** any other scripts are loaded.
 ```lua
@@ -504,7 +507,7 @@ Config.maxDistFromFront = Config.maxDistFromFront or 129640 -- max distance in m
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
 I recommend only making small changes, only to one value at a time, and playing for a while to see how it feels.
 
-### 6.2 Randomized start
+## 6.2 Randomized start
 
 You can randomize the campaign when starting a new save by creating an empty file named `randomize.lua` in the `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\` folder.
 
@@ -834,3 +837,18 @@ If I will, I wont tell you about it unless it's close to release.
 - Fixed crash on trying to restore a zone from culling but zone is neutral
 - F-14B player spawns now have INS fast align enabled
 - Added missing JTAC option
+
+### Caucasus V1.3.7 - 1 Dec 2023
+
+- Fixed issues introduced from scripting API changes (getCategory())
+- Updated mist to latest version
+
+### Syria Cold War V1.0.5 - 1 Dec 2023
+
+- Fixed issues introduced from scripting API changes (getCategory())
+- Updated mist to latest version
+
+### Syria V1.0.2 - 1 Dec 2023
+
+- Fixed issues introduced from scripting API changes (getCategory())
+- Updated mist to latest version
