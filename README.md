@@ -70,38 +70,6 @@ If, after you get the chance to play it a bit, you consider I deserve it, feel f
     7. [FC3 aircraft are cold start even in the hot start version of the mission](#107-fc3-aircraft-are-cold-start-even-in-the-hot-start-version-of-the-mission)
     8. [Will you do a version for *[insert map]* ?](#108-will-you-do-a-version-for-insert-map)
 11. [Changelog](#11-changelog)
-    - [v1.0 - 6 June 2023 ](#v10---6-june-2023)
-    - [v1.0.1 - 9 June 2023](#v101---9-june-2023)
-    - [v1.0.2 - 11 June 2023](#v102---11-june-2023)
-    - [v1.1 - 29 June 2023](#v11---29-june-2023)
-    - [Caucasus v1.1.1 - 29 June 2023](#caucasus-v111---29-june-2023)
-    - [Caucasus v1.1.2 - 29 June 2023](#caucasus-v112---29-june-2023)
-    - [Caucasus v1.1.3 - 29 June 2023](#caucasus-v113---29-june-2023)
-    - [Caucasus v1.1.4 - 2 July 2023](#caucasus-v114---2-july-2023)
-    - [Caucasus v1.1.5 - 2 July 2023](#caucasus-v115---2-july-2023)
-    - [Caucasus V1.1.6 - 3 July 2023](#caucasus-v116---3-july-2023)
-    - [Caucasus v1.1.7 - 3 July 2023](#caucasus-v117---3-july-2023)
-    - [Caucasus v1.1.8 - 4 July 2023](#caucasus-v118---4-july-2023)
-    - [Caucasus v1.1.9 - 5 July 2023](#caucasus-v119---5-july-2023)
-    - [Caucasus v1.1.10 - 8 July 2023](#caucasus-v1110---8-july-2023)
-    - [Caucasus v1.1.11 - 9 July 2023](#caucasus-v1111---9-july-2023)
-    - [Caucasus v1.2 - 11 July 2023](#caucasus-v12---11-july-2023)
-    - [Caucasus v1.2.1 - 11 July 2023](#caucasus-v121---11-july-2023)
-    - [Caucasus v1.3 - 13 July 2023](#caucasus-v13---13-july-2023)
-    - [Caucasus v1.3.1 - 15 July 2023](#caucasus-v131---15-july-2023)
-    - [Caucasus v1.3.2 - 17 July 2023](#caucasus-v132---17-july-2023)
-    - [Caucasus V1.3.3 - 22 July 2023](#caucasus-v133---22-july-2023)
-    - [Syria Cold War V1.0.1 - 22 July 2023](#syria-cold-war-v101---22-july-2023)
-    - [Caucasus V1.3.4 - 2 Aug 2023](#caucasus-v134---2-aug-2023)
-    - [Syria Cold War V1.0.2 - 2 Aug 2023](#syria-cold-war-v102---2-aug-2023)
-    - [Caucasus V1.3.5 - 9 Aug 2023](#caucasus-v135---9-aug-2023)
-    - [Syria Cold War V1.0.3 - 9 Aug 2023](#syria-cold-war-v103---9-aug-2023)
-    - [Caucasus V1.3.6 - 20 Sept 2023](#caucasus-v136---20-sept-2023)
-    - [Syria Cold War V1.0.4 - 20 Sept 2023](#syria-cold-war-v104---20-sept-2023)
-    - [Syria V1.0.1 - 20 Sept 2023](#syria-v101---20-sept-2023)
-    - [Caucasus V1.3.7 - 1 Dec 2023](#caucasus-v137---1-dec-2023)
-    - [Syria Cold War V1.0.5 - 1 Dec 2023](#syria-cold-war-v105---1-dec-2023)
-    - [Syria V1.0.2 - 1 Dec 2023](#syria-v102---1-dec-2023)
 
 ## 1. The Battlefield
 
@@ -852,3 +820,15 @@ If I will, I wont tell you about it unless it's close to release.
 
 - Fixed issues introduced from scripting API changes (getCategory())
 - Updated mist to latest version
+
+### Caucasus V1.3.8 - 3 Dec 2023
+
+- Fixed issue where ground assault convoys were stopping to engage already destroyed enemies
+
+### Syria Cold War V1.0.6 - 3 Dec 2023
+
+- Fixed issue where ground assault convoys were stopping to engage already destroyed enemies
+
+### Syria V1.0.3 - 3 Dec 2023
+
+- Fixed issue where ground assault convoys were stopping to engage already destroyed enemies
