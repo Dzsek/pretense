@@ -413,6 +413,8 @@ The GCI menu lets you set a warning radius around you, in which you will recieve
 To activate reports you have to choose a warning radius from the `Other->GCI->Set Warning Radius` option in the radio menu.
 You can disable reports using the `Other->GCI->Disable` option.
 
+The selected option will persist through aircraft changes, respawns and mission/server restarts.
+
 > Note: This is not an all-seeing eye of Sauron. You will only recieve reports of aircraft that were detected by search radars, early warning radars, and AWACS on your side.
 
 ## 5. Player XP, Ranks, and Command tokens
@@ -433,6 +435,8 @@ Available CMD items:
 |Priority Zone|The selected zone will become a priority for your coalition. All AI missions will first target this zone if possible, and choose an alternative target if the selected one is not viable. You can use this to prioritize attacks on an enemy zone, captures on a neutral zone, and resupplys on a friendly zone. Lasts about 1 hour |
 |Hack comms|Has a chance to reveal resources and production information of zones near the frontline(success rate 50%)|
 |Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 50%)|
+
+The amount of XP earned can be increased by staying in the same aircraft for longer periods of time. After 10 minutes of flight time, an XP multiplier will start growing slowly from 1.0x up to 5.0x. The current value of the multiplier can be seen in the player information menu. This survival bonus is applied at the time the XP is earned. Switching to a different aircraft, or respawning for any reason will reset the multiplier.
 
 ## 6. Editing the mission to suit your needs
 
@@ -470,6 +474,7 @@ Config.buildSpeed = 10 -- structure and defense build speed (smaller number long
 Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed (smaller number longer build times)
 Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of ai missions (smaller number longer build times)
 Config.maxDistFromFront = Config.maxDistFromFront or 129640 -- max distance in meters from front after which zone is forced into low activity state (export mode)
+Config.restrictMissionAcceptance = true -- if set to true, missions can only be accepted while landed inside friendly zones
 ```
 
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
@@ -832,3 +837,43 @@ If I will, I wont tell you about it unless it's close to release.
 ### Syria V1.0.3 - 3 Dec 2023
 
 - Fixed issue where ground assault convoys were stopping to engage already destroyed enemies
+
+### Caucasus V1.4.0 - 15 Dec 2023
+
+- Added xp multiplier bonus for surviving longer times in the same aircraft
+- Ground assault convoys now attempt repositioning if they stopped to engage the enemy but have been waiting for a long time
+- Fixed TARCAP mission not failing on some occasions when it should have
+- Added manual landing validation option to radio menu (For cases when the game fails to detect a landing)
+- Added config option to disable having to be landed and inside friendly zone to accept missions
+- Added persistent player configuration radio menu
+- Players can now enable a warning from the radio menu, that shows up while they are landed and have no active mission
+- Added logic to attempt getting ground convoys unstuck
+- GCI settings are now persistent between respawns, aircraft changes and mission/server restarts
+- Added EPLRS task to AWACS
+
+### Syria Cold War V1.1.0 - 15 Dec 2023
+
+- Added xp multiplier bonus for surviving longer times in the same aircraft
+- Ground assault convoys now attempt repositioning if they stopped to engage the enemy but have been waiting for a long time
+- Fixed TARCAP mission not failing on some occasions when it should have
+- Added manual landing validation option to radio menu (For cases when the game fails to detect a landing)
+- Added config option to disable having to be landed and inside friendly zone to accept missions
+- Added persistent player configuration radio menu
+- Players can now enable a warning from the radio menu, that shows up while they are landed and have no active mission
+- Added logic to attempt getting ground convoys unstuck
+- GCI settings are now persistent between respawns, aircraft changes and mission/server restarts
+- Replaced BMP-2 with BMP-1 units
+- Downgraded some of the AA weapons of the AI
+
+### Syria V1.1.0 - 15 Dec 2023
+
+- Added xp multiplier bonus for surviving longer times in the same aircraft
+- Ground assault convoys now attempt repositioning if they stopped to engage the enemy but have been waiting for a long time
+- Fixed TARCAP mission not failing on some occasions when it should have
+- Added manual landing validation option to radio menu (For cases when the game fails to detect a landing)
+- Added config option to disable having to be landed and inside friendly zone to accept missions
+- Added persistent player configuration radio menu
+- Players can now enable a warning from the radio menu, that shows up while they are landed and have no active mission
+- Added logic to attempt getting ground convoys unstuck
+- GCI settings are now persistent between respawns, aircraft changes and mission/server restarts
+- Added EPLRS task to AWACS
