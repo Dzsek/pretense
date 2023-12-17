@@ -877,3 +877,15 @@ If I will, I wont tell you about it unless it's close to release.
 - Added logic to attempt getting ground convoys unstuck
 - GCI settings are now persistent between respawns, aircraft changes and mission/server restarts
 - Added EPLRS task to AWACS
+
+### Caucasus V1.4.1 - 17 Dec 2023
+
+- Fixed crash on AWACS tasking 
+
+### Syria Cold War V1.1.1 - 17 Dec 2023
+
+- Fixed crash on AWACS tasking (not relevant as no AWACS in cold war, main script change only)
+
+### Syria V1.1.1 - 17 Dec 2023
+
+- Fixed crash on AWACS tasking 
