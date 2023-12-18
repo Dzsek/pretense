@@ -888,4 +888,16 @@ If I will, I wont tell you about it unless it's close to release.
 
 ### Syria V1.1.1 - 17 Dec 2023
 
-- Fixed crash on AWACS tasking 
+- Fixed crash on AWACS tasking
+
+### Caucasus V1.4.2 - 18 Dec 2023
+
+- Fixed AWACS datalink
+
+### Syria Cold War V1.1.2 - 18 Dec 2023
+
+- Fixed AWACS datalink (not relevant as no AWACS in cold war, main script change only)
+
+### Syria V1.1.2 - 18 Dec 2023
+
+- Fixed AWACS datalink
