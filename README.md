@@ -901,3 +901,20 @@ If I will, I wont tell you about it unless it's close to release.
 ### Syria V1.1.2 - 18 Dec 2023
 
 - Fixed AWACS datalink
+
+### Caucasus V1.4.3 - 19 Dec 2023
+
+- Added FCR to Apache spawns
+- Save now resets if any of the coalitions does not own a single zone at mission load
+- Join code now shows in mission details in air if mission accept restrictions are disabled
+
+### Syria Cold War V1.1.3 - 19 Dec 2023
+
+- Save now resets if any of the coalitions does not own a single zone at mission load
+- Join code now shows in mission details in air if mission accept restrictions are disabled
+
+### Syria V1.1.3 - 19 Dec 2023
+
+- Added FCR to Apache spawns
+- Save now resets if any of the coalitions does not own a single zone at mission load
+- Join code now shows in mission details in air if mission accept restrictions are disabled
