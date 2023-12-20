@@ -918,3 +918,24 @@ If I will, I wont tell you about it unless it's close to release.
 - Added FCR to Apache spawns
 - Save now resets if any of the coalitions does not own a single zone at mission load
 - Join code now shows in mission details in air if mission accept restrictions are disabled
+
+### Caucasus V1.4.4 - 20 Dec 2023
+
+- Fixed Config.restrictMissionAcceptance being overriden when set to false according to instructions
+- Fixed error when loading supplies into C130 mod without having crates on board
+- Fixed error when droping supply crate over invalid terrain
+- Fixed mission file serializer format to be similar to EDs (should fix some compatibility issues with 3rd party tools)
+
+### Syria Cold War V1.1.4 - 20 Dec 2023
+
+- Fixed Config.restrictMissionAcceptance being overriden when set to false according to instructions
+- Fixed error when loading supplies into C130 mod without having crates on board
+- Fixed error when droping supply crate over invalid terrain
+- Fixed mission file serializer format to be similar to EDs (should fix some compatibility issues with 3rd party tools)
+
+### Syria V1.1.4 - 20 Dec 2023
+
+- Fixed Config.restrictMissionAcceptance being overriden when set to false according to instructions
+- Fixed error when loading supplies into C130 mod without having crates on board
+- Fixed error when droping supply crate over invalid terrain
+- Fixed mission file serializer format to be similar to EDs (should fix some compatibility issues with 3rd party tools)
