@@ -939,3 +939,15 @@ If I will, I wont tell you about it unless it's close to release.
 - Fixed error when loading supplies into C130 mod without having crates on board
 - Fixed error when droping supply crate over invalid terrain
 - Fixed mission file serializer format to be similar to EDs (should fix some compatibility issues with 3rd party tools)
+
+### Caucasus V1.4.5 - 21 Dec 2023
+
+- Fixed unit category detection after latest change from ED which could cause script errors
+
+### Syria Cold War V1.1.5 - 21 Dec 2023
+
+- Fixed unit category detection after latest change from ED which could cause script errors
+
+### Syria V1.1.5 - 21 Dec 2023
+
+- Fixed unit category detection after latest change from ED which could cause script errors
