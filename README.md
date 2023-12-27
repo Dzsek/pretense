@@ -473,7 +473,7 @@ Config.randomBoost = 0.0004 -- adds a random factor to build speeds that changes
 Config.buildSpeed = 10 -- structure and defense build speed (smaller number longer build times)
 Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed (smaller number longer build times)
 Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of ai missions (smaller number longer build times)
-Config.maxDistFromFront = Config.maxDistFromFront or 129640 -- max distance in meters from front after which zone is forced into low activity state (export mode)
+Config.maxDistFromFront = 129640 -- max distance in meters from front after which zone is forced into low activity state (export mode)
 Config.restrictMissionAcceptance = true -- if set to true, missions can only be accepted while landed inside friendly zones
 ```
 
