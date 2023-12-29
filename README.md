@@ -404,7 +404,7 @@ Only units that are currently alive are shown in this menu. It can happen that t
 
 Your stats can be accessed through the `Other->Information->Player` option in the radio menu.
 
-This contains your name, XP, CMD tokens, and rank.
+This contains your name, XP, CMD tokens, rank, and survival multiplier.
 
 ### 4.4 GCI menu
 
@@ -435,11 +435,16 @@ Available CMD items:
 |Priority Zone|The selected zone will become a priority for your coalition. All AI missions will first target this zone if possible, and choose an alternative target if the selected one is not viable. You can use this to prioritize attacks on an enemy zone, captures on a neutral zone, and resupplys on a friendly zone. Lasts about 1 hour |
 |Hack comms|Has a chance to reveal resources and production information of zones near the frontline(success rate 50%)|
 |Bribe officer|Has a chance to reveal resources and production on almost all enemy zones. (success rate 50%)|
+|Shell zone|Artillery will shell the enemy in the selected zone|
+|Sabotage|Saboteurs will be sent to the selected zone to plant explosives at one of its buildings. (succes rate 90%)|
 
-The amount of XP earned can be increased by staying in the same aircraft for longer periods of time. After 10 minutes of flight time, an XP multiplier will start growing slowly from 1.0x up to 5.0x. The current value of the multiplier can be seen in the player information menu. This survival bonus is applied at the time the XP is earned. Switching to a different aircraft, or respawning for any reason will reset the multiplier.
+The amount of XP earned can be increased by staying in the same aircraft for longer periods of time. After 10 minutes of flight time, an XP multiplier will start growing slowly from 1.0x up to 5.0x. The current value of the multiplier can be seen in the player information menu. This survival bonus is applied at the time the XP is earned. 
+
+You can secure your multiplier by landing at a friendly zone and shutting down your engines. While the multiplier is secured, you can freely switch to a different aircraft or exit the game without reseting it to 1.0x. Taking off will remove the secure status. Switching to a different aircraft, or respawning for any reason while not secured will reset the multiplier. 
+
+Secured status can be verified with the `Other->Information->Player` option, where the `[SECURED]` label will be displayed next to the multiplier if secured.
 
 ## 6. Editing the mission to suit your needs
-
 
 - You can add any client aircraft you want anywhere on the map. Should you add it inside the borders of a zone, the slot will be blocked according to the state of the zone. No extra effort required on your part to make it work.
 - Due to limitations with the DCS scripting API, multiple client aircraft in the same group are not supported. Please limit all slots to single aircraft groups, otherwise the radio menu and some other features will not work correctly.
@@ -468,7 +473,7 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 You can override some values that have to do with balance by running the following code **before** any other scripts are loaded.
 ```lua
 Config = Config or {}
-Config.lossCompensation = 1.0 -- gives advantage to the side with less zones. Set to 0 to disable
+Config.lossCompensation = 1.1 -- gives advantage to the side with less zones. Set to 0 to disable
 Config.randomBoost = 0.0004 -- adds a random factor to build speeds that changes every 30 minutes, set to 0 to disable
 Config.buildSpeed = 10 -- structure and defense build speed (smaller number longer build times)
 Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed (smaller number longer build times)
@@ -479,6 +484,8 @@ Config.restrictMissionAcceptance = true -- if set to true, missions can only be 
 
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
 I recommend only making small changes, only to one value at a time, and playing for a while to see how it feels.
+
+The values listed above are the defaults.
 
 ## 6.2 Randomized start
 
@@ -951,3 +958,25 @@ If I will, I wont tell you about it unless it's close to release.
 ### Syria V1.1.5 - 21 Dec 2023
 
 - Fixed unit category detection after latest change from ED which could cause script errors
+
+### Caucasus V1.4.6 - 27 Dec 2023
+
+- Fixed config menu not appearing for players of low rank
+- Fixed error when target of CSAR mission is killed
+
+### Syria Cold War V1.1.6 - 27 Dec 2023
+
+- Fixed config menu not appearing for players of low rank
+- Fixed error when target of CSAR mission is killed
+
+### Syria V1.1.6 - 27 Dec 2023
+
+- Fixed config menu not appearing for players of low rank
+- Fixed error when target of CSAR mission is killed
+
+### Pretense V1.5 - 29 Dec 2023
+
+>Note: Unified version numbers, changes from now on will refer to all Pretense missions, except if otherwise specified
+
+- Added new CMD options (Sabotage and artillery) (see [section 5](#5-player-xp-ranks-and-command-tokens))
+- You can now secure your survival bonus if you shut down your aircraft while landed at a friendly zone (see [section 5](#5-player-xp-ranks-and-command-tokens))
