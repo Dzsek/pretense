@@ -980,3 +980,10 @@ If I will, I wont tell you about it unless it's close to release.
 
 - Added new CMD options (Sabotage and artillery) (see [section 5](#5-player-xp-ranks-and-command-tokens))
 - You can now secure your survival bonus if you shut down your aircraft while landed at a friendly zone (see [section 5](#5-player-xp-ranks-and-command-tokens))
+
+### Pretense V1.5.1 - 5 Jan 2024
+
+- Command & Control menu moved to always be the last option in the radio menu
+- Reduced accuracy of Artillery CMD option
+- Fixed runway bombing mission progress not registering
+- Syria Cold War: removed SA-19 from SA-6 group
