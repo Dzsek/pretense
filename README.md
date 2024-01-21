@@ -148,7 +148,6 @@ In the case of enemy zones, only the name of the zone will be displayed, unless 
 
 ### 1.6 Player Spawns
 
-
 Players can spawn in certain zones as long as it is controlled by the blue coalition. These zones are marked on the map with a green outline.
 
 ### 1.7 Capturing a zone
@@ -162,6 +161,29 @@ Once the zone is neutral it can be captured in one of 3 ways:
 - A player deploys a capture squad inside the zone and the squad finishes their mission
 
 >Note: Defensive groups do not have to be destroyed for a zone to turn neutral, and they can keep defending the area even after the coalition lost control of the zone.
+
+### 1.8 Carriers
+
+Carriers look similar to regular zones but behave differently in a number of ways:
+
+- The zone follows the carrier as it moves
+- Carriers do not build and deploy AI missions autonomously
+- Carrier resources are deducted each time a player takes off from the carrier and refunded when a player lands at a carrier
+- If the carrier has run out of resources player spawns are restricted
+- Carriers dont get resupplied automatically by the AI, but can be resupplied by players by bringing in supplies from a regular zone, or simply landing any aircraft on the carrier, which will award one aircrafts worth of resources
+
+Players can call in various AI support missions from a carrier after they reach the rank of `O-3 Captain`. Calling in support uses the resources of the carrier. If there are insufficient resources available, the support can not be called in.
+
+The following AI support types can be called in from the Carrier:
+|Name|Description|Cost|
+|:--:|:----------|:--:|
+|CAP|Patrols around a selected frontline zone|1000|
+|Strike|Bombs structures in the selected frontline zone|2000|
+|Tanker|Orbits around selected friendly zone and provides refueling services|3000|
+|AWACS|Orbits around selected friendly zone and provides AWACS services|5000|
+|Transport Helo|Transport helicopter flies to and lands at the target zone, capturing it if its neutral, and delivering supplies to it|3000|
+
+Players who reach the rank of `O-7 Brigadier general` can move the carrier using the navigation radio menu of the carrier. The carrier can be commanded to either move to one of the waypoints displayed on the map and wait there, or patrol around one of the displayed zones on the map.
 
 ## 2. Logistics
 This section covers only player logistics. For AI logistics see the supply AI mission in section 1.4
@@ -211,7 +233,7 @@ Available infrantry squads:
 |Ambush| Squad armed with rifles and RPGs that can be deployed anywhere on the battlefield. Can be used to intercept enemy convoys.|
 |Engineers| If deployed at a friendly zone, they will boost production speed, while reducing costs for anything built at the zone for a limited time.|
 |MANPADS| Squad armed with rifles for self protection and MANPADS, that can be deployed anywhere on the battlefield. Can be used to provide some protection from enemy aircraft or intercept enemy supply helicopters|
-|Spy| Spy disguised as an enemy soldier. If deployed to an enemy zone, will reveal its, and its neighbours, resources and production for 30 minutes.|
+|Spy| Spy disguised as an enemy soldier. If deployed to an enemy zone, will reveal its, and its neighbours, resources and production for 30 minutes, and will allow for Strike missions to be generated towards specific buildings in those zones.|
 |Rapier SAM| Small defensive SAM system. Can be deployed anywhere on the battlefield.|
 
 
@@ -424,7 +446,7 @@ After a certain amount of XP you will rank up.
 
 Once you reach rank ``E-6`` you will have a chance to earn CMD tokens when you complete a mission. The higher your rank the better your chances.
 
-You can spend CMD tokens using the ``Command & Control`` radio menu. Once you buy an item, it will deduct the displayed number of CMD tokens from your account, and instructions will be displayed on how to use the bought item. For now, all options will direct you to open the radio menu again and select a target for your bought item from a menu of zones on the frontline.
+You can spend CMD tokens using the ``Command & Control`` radio menu. Once you buy an item, it will deduct the displayed number of CMD tokens from your account, and instructions will be displayed on how to use the bought item. In some cases you will be directed to open the radio menu again and select a target for your bought item from a menu of zones on the frontline.
 
 Available CMD items:
 
@@ -466,7 +488,7 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 ```
 - You only need to add the lines for the aircraft you want to change.
 
-- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. 
+- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects.
 
 ## 6.1 Config
 
@@ -480,6 +502,37 @@ Config.supplyBuildSpeed = 85 -- supply helicopters and convoys build speed (smal
 Config.missionBuildSpeedReduction = 0.12 -- reduction of build speed in case of ai missions (smaller number longer build times)
 Config.maxDistFromFront = 129640 -- max distance in meters from front after which zone is forced into low activity state (export mode)
 Config.restrictMissionAcceptance = true -- if set to true, missions can only be accepted while landed inside friendly zones
+
+-- specify how many of each mission type can be present at the same time on the mission board
+-- note that increasing the number of some of these can result in multiple missions getting generated against the same targets
+Config.missions = { 
+    ['cap_easy'] = 2,
+    ['cap_medium'] = 1,
+    ['tarcap'] = 1,
+    ['cas_easy'] = 2,
+    ['cas_medium'] = 1,
+    ['cas_hard'] = 1,
+    ['bai'] = 1,
+    ['sead'] = 3,
+    ['dead'] = 1,
+    ['strike_veryeasy'] = 2,
+    ['strike_easy'] = 1,
+    ['strike_medium'] = 3,
+    ['strike_hard'] = 1,
+    ['deep_strike'] = 3,
+    ['recon_plane'] = 3,
+    ['recon_plane_deep'] = 3,
+    ['anti_runway'] = 2,
+    ['supply_easy'] = 3,
+    ['supply_hard'] = 1,
+    ['escort'] = 2,
+    ['csar'] = 1,
+    ['scout_helo'] = 3,
+    ['extraction'] = 1,
+    ['deploy_squad'] = 3
+}
+
+Config.missionBoardSize = 15 -- sets how many missions can be on the mission board simultaneously, increasing this too much will cause the list to be too not fit on the screen anymore, and in extreme cases cause performance issues
 ```
 
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
@@ -582,7 +635,7 @@ Most likely not, but cant hurt to try. The campaign is almost exclusively run fr
 
 ### 10.2 I've added the hercules mod, but airdropped units just disapear
 
-You need to add the Hercules airdrop script to the mission. It is not added by default.
+You need to add the Hercules airdrop script to the mission. It is not added by default. Only Squads from the Logistics menu built into the mission are supported by default.
 
 ### 10.3 I've added CTLD/Hercules script, but deployed units are not saved after the mission is restarted.
 
@@ -608,6 +661,29 @@ This is intentional, as FC3 aircraft can not be rearmed with the engines running
 
 I probably wont.
 If I will, I wont tell you about it unless it's close to release.
+
+### 10.9 I've cleared a zone but no AI is coming to capture it
+
+There can be several reasons why a zone does not instantly try to capture neighbouring zones.
+ - its supply groups are already deployed on different missions
+ - its unable to build supply missions due to the building needed to produce them being destroyed or not built yet
+ - it does not have enough resources to finish building the supply mission
+ - it is currently working on building something else
+
+Note that the AI will not always make the best and most optimal decission.
+
+### 10.10 Enemy units have spawned in the enemy zone while I was over it and promptly shot me down
+
+Each zone will deploy any defensive or offensive groups as soon as it finishes building them. It does not stop working just because their enemy is close. Try not to hang around too long over enemy zones. 
+
+Alternatively, complete recon missions, drop spies in enemy zones, or use the CMD options available to reveal what the enemy is working on and what their progress is, so you don't get caught off-guard. 
+
+If a zone is currently attempting to repair a damaged defensive group, destroying a unit of said group will reset the zones progress on repairing it.
+
+### 10.11 Why cant I rearm at this zone?
+
+Not every zone is setup as a FARP. Only zones that you can spawn at and zones that have airfields will allow you to rearm and refuel.
+Some static objects that serve as structures for the zones do have FARP in the name, but this alone does not mean the zone is setup as a FARP.
 
 ## 11. Changelog
 
@@ -987,3 +1063,19 @@ If I will, I wont tell you about it unless it's close to release.
 - Reduced accuracy of Artillery CMD option
 - Fixed runway bombing mission progress not registering
 - Syria Cold War: removed SA-19 from SA-6 group
+
+### Pretense V1.5.2 - 13 Jan 2024
+
+- Spy squad can now generate Strike mission targets on successful completion of their mission
+- Increased size of mission board
+- Mission board size and mission availability can now be configured
+- Fixed another error during CSAR when pilot is killed
+- Rebalanced CMD earnings and costs
+- Increased priority zone CMD to 2 hours
+- Increased accuracy of Artillery CMD option
+
+### Pretense V1.6 - 21 Jan 2024
+
+> Note: This update will start a new mission save file, reseting your mission progress. The player profiles will remain unaffected.
+
+- Added Carriers
