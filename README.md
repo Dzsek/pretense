@@ -1076,6 +1076,6 @@ Some static objects that serve as structures for the zones do have FARP in the n
 
 ### Pretense V1.6 - 21 Jan 2024
 
-> Note: This update will start a new mission save file, reseting your mission progress. The player profiles will remain unaffected.
+> Note: This update will start a new mission save file, resetting your mission progress. The player profiles will remain unaffected.
 
 - Added Carriers
