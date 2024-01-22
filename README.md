@@ -1079,3 +1079,11 @@ Some static objects that serve as structures for the zones do have FARP in the n
 > Note: This update will start a new mission save file, resetting your mission progress. The player profiles will remain unaffected.
 
 - Added Carriers
+
+### Pretense V1.6.1 - 22 Jan 2024
+
+- Replaced F-14s of Apex Flight with F/A-18s cause they were misbehaving
+- Split Harriers on Invincible into two separate flights
+- Limited Zone selection of CAP flights to near frontline to reduce clutter in radio menu
+- Tentative fix for error when updating state of AI aircraft
+- Fixed issue with activating multiple target menus at once generating wrong menus
