@@ -1087,3 +1087,8 @@ Some static objects that serve as structures for the zones do have FARP in the n
 - Limited Zone selection of CAP flights to near frontline to reduce clutter in radio menu
 - Tentative fix for error when updating state of AI aircraft
 - Fixed issue with activating multiple target menus at once generating wrong menus
+
+### Pretense v1.6.2 - 23 Jan 2024
+
+- Fixed error when assigning SEAD missions
+- Fixed issue with Harriers landing immediatly after takeoff from carrier
