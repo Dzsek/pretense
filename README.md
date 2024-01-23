@@ -1091,4 +1091,4 @@ Some static objects that serve as structures for the zones do have FARP in the n
 ### Pretense v1.6.2 - 23 Jan 2024
 
 - Fixed error when assigning SEAD missions
-- Fixed issue with Harriers landing immediatly after takeoff from carrier
+- Fixed issue with Harriers landing immediately after takeoff from carrier
