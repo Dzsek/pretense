@@ -1092,3 +1092,10 @@ Some static objects that serve as structures for the zones do have FARP in the n
 
 - Fixed error when assigning SEAD missions
 - Fixed issue with Harriers landing immediately after takeoff from carrier
+
+### Pretense v1.6.3 - 31 Jan 2024
+
+- Fixed script error on Hercules cargo drop collision
+- Fixed carrier stop command not being applied when reaching a goto waypoint
+- Fixed Nova flight on Caucasus not spawning on LHA
+- Fixed missing waypoints from kneeboards
