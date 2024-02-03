@@ -533,6 +533,9 @@ Config.missions = {
 }
 
 Config.missionBoardSize = 15 -- sets how many missions can be on the mission board simultaneously, increasing this too much will cause the list to be too not fit on the screen anymore, and in extreme cases cause performance issues
+
+Config.carrierSpawnCost = 500 -- resource cost for carrier when players take off, set to 0 to disable restriction
+Config.zoneSpawnCost = 500 -- resource cost for zones when players take off, set to 0 to disable restriction
 ```
 
 You can paste this in a do script action that is run **before** the mission scripts. You can leave out the values you do not wish to change.
@@ -1099,3 +1102,13 @@ Some static objects that serve as structures for the zones do have FARP in the n
 - Fixed carrier stop command not being applied when reaching a goto waypoint
 - Fixed Nova flight on Caucasus not spawning on LHA
 - Fixed missing waypoints from kneeboards
+
+### Pretense v1.6.4 - 03 Feb 2024
+
+- Reduced max supply of carriers
+- Added resource cost to taking off from zones similar to carriers (configurable)
+- Caucausus: added spawnzones to Zugdidi to avoid units spawning inside map objects
+- Fixed naval command menu duplicating for players with rank 0
+- Syria (both): moved El Taebah convoys farther from intersection to decrease chances of getting stuck on spawn
+- Strike targets revealed by recon missions and spies now persist between restarts
+- Fixed JTAC not retargeting automatically on destruction of target
