@@ -598,6 +598,8 @@ All settings (time, weather, temperature, wind) are enabled by default. These ca
 
 ### 8.1 Slotblock
 
+> Note: As of version 1.6.5 slotblock.lua is no longer needed, and this chapter can be ignored.
+
 For players to be prevented from spawning at enemy zones, the included `slotblock.lua` file must be placed in your servers `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Scripts\Hooks` folder, and the server restarted, in case it was already running at the time.
 
 
@@ -1112,3 +1114,8 @@ Some static objects that serve as structures for the zones do have FARP in the n
 - Syria (both): moved El Taebah convoys farther from intersection to decrease chances of getting stuck on spawn
 - Strike targets revealed by recon missions and spies now persist between restarts
 - Fixed JTAC not retargeting automatically on destruction of target
+
+### Pretense v1.6.5 - 04 Feb 2024
+
+- Fixed error on restoring strike targets
+- Block slots from within the mission, removing the need for slotblock.lua
