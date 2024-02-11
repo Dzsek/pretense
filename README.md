@@ -1137,14 +1137,14 @@ Some static objects that serve as structures for the zones do have FARP in the n
 
 ### Pretense v1.7 - 11 Feb 2024
 
-- Recon can now be performed independantly from a mission using the new Recon menu (see [section 1.9](#19-recon))
+- Recon can now be performed independently from a mission using the new Recon menu (see [section 1.9](#19-recon))
 - Artillery accuracy improved against zones that have their information revealed
 - Sabotage CMD option now has a 100% chance of success against zones that have their information revealed
 - JTAC now reveals information of zone its deployed to
 - Increased cost of JTAC CMD
 - Strike support can now only be called in on zones that have their information revealed
-- Added cruise missile strike suport option for compatible naval groups
-- Assault convoys now have a small chance of deploying ambush and manpad squads somewhere along their route (valid for both coalitions)
+- Added cruise missile strike support option for compatible naval groups
+- Assault convoys now have a small chance of deploying ambush and manpads squads somewhere along their route (valid for both coalitions)
 - Naval groups now have persistence on a member level, if main ship is destroyed, interaction with naval group will be disabled for the rest of the campaign
 
 > Note: Cruise missiles will only be available for campaigns started on v1.7 or newer
