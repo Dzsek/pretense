@@ -178,6 +178,8 @@ The following AI support types can be called in from the Carrier:
 
 Players who reach the rank of `O-7 Brigadier general` can move the carrier using the navigation radio menu of the carrier. The carrier can be commanded to either move to one of the waypoints displayed on the map and wait there, or patrol around one of the displayed zones on the map.
 
+Use the `Other->Naval Command->[name]->Information` option in the radio menu to access information of the carrier like radio frequencies and channels.
+
 ### 1.9 Recon
 
 Players have the ability to perform Reconnaissance on enemy zones which will provide a number of benefits.
@@ -1148,3 +1150,9 @@ Some static objects that serve as structures for the zones do have FARP in the n
 - Naval groups now have persistence on a member level, if main ship is destroyed, interaction with naval group will be disabled for the rest of the campaign
 
 > Note: Cruise missiles will only be available for campaigns started on v1.7 or newer
+
+### Pretense v1.7.1 - 23 Feb 2024
+
+- Target smoke CMD now only available on revealed zones
+- Fixed tanker speed defined in knots instead of m/s leading to high orbit speeds
+- Temporary fix to restore old Group.getByName behaviour
