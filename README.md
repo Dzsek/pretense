@@ -1156,3 +1156,7 @@ Some static objects that serve as structures for the zones do have FARP in the n
 - Target smoke CMD now only available on revealed zones
 - Fixed tanker speed defined in knots instead of m/s leading to high orbit speeds
 - Temporary fix to restore old Group.getByName behaviour
+
+### Pretense v1.7.2 - 23 Feb 2024
+
+- Fixed occasional script error when saving zone groups
