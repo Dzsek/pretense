@@ -334,6 +334,8 @@ Example:
 
 Infantry squads can be deployed the same way. Each dropped crate will auto select one of the loaded infantry squads. You can prepare a specific squad manually using the `Other->Logistics->Loadmaster` option in the radio menu. After your prepared squad is dropped, the next one will be auto selected again, unless you prepare a new one.
 
+> Note: You do not need any additional scripts for the above to work, everything is included in the mission, you just need to add the aircraft slots. The Hercules cargo scripts that come with the module are only needed if you want to deploy the other units that are independent of Pretense.
+
 ## 3. Missions
 
 >Note: A reminder on the commands can be accessed using the `Other->Missions->Help` option in the radio, or by creating a map marker anywhere and settings its text to `help`
@@ -488,6 +490,7 @@ Secured status can be verified with the `Other->Information->Player` option, whe
 ## 6. Editing the mission to suit your needs
 
 - You can add any client aircraft you want anywhere on the map. Should you add it inside the borders of a zone, the slot will be blocked according to the state of the zone. No extra effort required on your part to make it work.
+- After adding new client slots, you can run the mission through my [Mass Waypoint Editor](https://github.com/Dzsek/DCSMassWaypointEdit) tool to ensure that the waypoints of all the newly added slots are synced to the waypoint template present in the mission.
 - Due to limitations with the DCS scripting API, multiple client aircraft in the same group are not supported. Please limit all slots to single aircraft groups, otherwise the radio menu and some other features will not work correctly.
 - You **can not** adjust difficulty by deleting AI aircraft from the mission editor. Doing so will result in script errors.
 - Logistics capable aircraft where categorized by what maked logical sense on what they can carry. In case you would like to enable logistics for other aircraft you can do so by adding a doScript action afther the scripts are loaded in the initialization trigger in the mission editor and overriding the values in there like this:
@@ -507,7 +510,46 @@ PlayerLogistics.allowedTypes['AH-64D_BLK_II'] = { supplies = false }
 ```
 - You only need to add the lines for the aircraft you want to change.
 
-- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects.
+- Player ranks, rank names, rewards and unlocks can be edited the same way as above by overriding the following values in another doScript action after the scripts are loaded in the initialization trigger:
+
+```lua
+    PlayerTracker.ranks[1] =  { rank=1,  name='E-1 Airman basic',           requiredXP = 0,        cmdChance = 0,       cmdAward=0,     cmdTrys=0}
+    PlayerTracker.ranks[2] =  { rank=2,  name='E-2 Airman',                 requiredXP = 2000,     cmdChance = 0,       cmdAward=0,     cmdTrys=0}
+    PlayerTracker.ranks[3] =  { rank=3,  name='E-3 Airman first class',     requiredXP = 4500,     cmdChance = 0,       cmdAward=0,     cmdTrys=0}
+    PlayerTracker.ranks[4] =  { rank=4,  name='E-4 Senior airman',          requiredXP = 7700,     cmdChance = 0,       cmdAward=0,     cmdTrys=0}
+    PlayerTracker.ranks[5] =  { rank=5,  name='E-5 Staff sergeant',         requiredXP = 11800,    cmdChance = 0.01,    cmdAward=1,     cmdTrys=1}
+    PlayerTracker.ranks[6] =  { rank=6,  name='E-6 Technical sergeant',     requiredXP = 17000,    cmdChance = 0.01,    cmdAward=5,     cmdTrys=10}
+    PlayerTracker.ranks[7] =  { rank=7,  name='E-7 Master sergeant',        requiredXP = 23500,    cmdChance = 0.03,    cmdAward=5,     cmdTrys=10}
+    PlayerTracker.ranks[8] =  { rank=8,  name='E-8 Senior master sergeant', requiredXP = 31500,    cmdChance = 0.06,    cmdAward=10,    cmdTrys=10}
+    PlayerTracker.ranks[9] =  { rank=9,  name='E-9 Chief master sergeant',  requiredXP = 42000,    cmdChance = 0.10,    cmdAward=10,    cmdTrys=10}
+    PlayerTracker.ranks[10] = { rank=10, name='O-1 Second lieutenant',      requiredXP = 52800,    cmdChance = 0.14,    cmdAward=20,    cmdTrys=15}
+    PlayerTracker.ranks[11] = { rank=11, name='O-2 First lieutenant',       requiredXP = 66500,    cmdChance = 0.20,    cmdAward=20,    cmdTrys=15}
+    PlayerTracker.ranks[12] = { rank=12, name='O-3 Captain',                requiredXP = 82500,    cmdChance = 0.27,    cmdAward=25,    cmdTrys=15, allowCarrierSupport=true}
+    PlayerTracker.ranks[13] = { rank=13, name='O-4 Major',                  requiredXP = 101000,   cmdChance = 0.34,    cmdAward=25,    cmdTrys=20, allowCarrierSupport=true}
+    PlayerTracker.ranks[14] = { rank=14, name='O-5 Lieutenant colonel',     requiredXP = 122200,   cmdChance = 0.43,    cmdAward=25,    cmdTrys=20, allowCarrierSupport=true}
+    PlayerTracker.ranks[15] = { rank=15, name='O-6 Colonel',                requiredXP = 146300,   cmdChance = 0.52,    cmdAward=30,    cmdTrys=20, allowCarrierSupport=true}
+    PlayerTracker.ranks[16] = { rank=16, name='O-7 Brigadier general',      requiredXP = 173500,   cmdChance = 0.63,    cmdAward=35,    cmdTrys=25, allowCarrierSupport=true, allowCarrierCommand=true}
+    PlayerTracker.ranks[17] = { rank=17, name='O-8 Major general',          requiredXP = 204000,   cmdChance = 0.74,    cmdAward=40,    cmdTrys=25, allowCarrierSupport=true, allowCarrierCommand=true}
+    PlayerTracker.ranks[18] = { rank=18, name='O-9 Lieutenant general',     requiredXP = 238000,   cmdChance = 0.87,    cmdAward=45,    cmdTrys=25, allowCarrierSupport=true, allowCarrierCommand=true}
+    PlayerTracker.ranks[19] = { rank=19, name='O-10 General',               requiredXP = 275700,   cmdChance = 0.95,    cmdAward=50,    cmdTrys=30, allowCarrierSupport=true, allowCarrierCommand=true}
+```
+
+- Player ranks use the following object format:
+  
+```lua
+    {
+        rank=19,                     -- rank number, needs to be the same as the index in the PlayerTracker.ranks table
+        name='O-10 General',         -- display name of the rank
+        requiredXP = 275700,         -- required xp to reach this rank
+        cmdChance = 0.95,            -- chance that a cmd point is awarded on each cmd roll
+        cmdAward=50,                 -- one time cmd points awarded when reaching this rank
+        cmdTrys=30,                  -- number of cmd rolls that happen each time a mission is completed, each roll has a 'cmdChance' chance of awarding a cmd point
+        allowCarrierSupport=true,    -- if true, players with this rank can access the carrier support menu
+        allowCarrierCommand=true     -- if true, players with this rank can access the carrier navigation menu
+    }
+```
+
+- There is currently no easy way to adjust difficulty. The flow of the mission depends on many factors such as cost of AI groups, default build speeds, the flow of resources to each zone, the decision of each zone on what to build, a BattlefieldManager component that adds some variation to the default build speeds based on battlefield state, a randomized boost factor to build speeds to make either coalition occasionally push harder, and finally the behaviour of the DCS AI. It is unpredictable by nature, and any changes you make might have unexpected side effects. Both sides use the same parameters by design and it is not possible to set them independently based on coalition.
 
 ## 6.1 Config
 
@@ -560,6 +602,8 @@ I recommend only making small changes, only to one value at a time, and playing 
 
 The values listed above are the defaults.
 
+You can add only the values that you want to change, but the first line (``Config = Config or {}``) always needs to be present.
+
 ## 6.2 Randomized start
 
 You can randomize the campaign when starting a new save by creating an empty file named `randomize.lua` in the `C:\Users\<windows_username>\Saved Games\DCS.openbeta\Missions\Saves\` folder.
@@ -611,6 +655,8 @@ Player stats, such as XP is stored in a separate file in the same location calle
 Additional (experimental) persistence can be enable by installing and configuring the [TimePersistence](https://github.com/Dzsek/TimePersistence) mod.
 All settings (time, weather, temperature, wind) are enabled by default. These can be configured by editing the properties of the ``props`` zone int the mission editor near Batumi in the south of Caucasus.
 
+> Note: This mod works exclusively in singleplayer.
+
 ## 8. Running the mission on a server
 
 ### 8.1 Slotblock
@@ -657,7 +703,10 @@ Most likely not, but cant hurt to try. The campaign is almost exclusively run fr
 
 ### 10.2 I've added the hercules mod, but airdropped units just disapear
 
-You need to add the Hercules airdrop script to the mission. It is not added by default. Only Squads from the Logistics menu built into the mission are supported by default.
+You need to add the Hercules airdrop script to the mission if you would like the normal airdrops to work, as these are not tracked by Pretense. It is not added by default. 
+Only Squads from the Logistics menu built into the mission are supported by default, without the need of extra scripts.
+
+You also need to install the Hercules mod server side if you are running Pretense on a server, so that the server is aware of the new payloads added by the mod.
 
 ### 10.3 I've added CTLD/Hercules script, but deployed units are not saved after the mission is restarted.
 
@@ -706,6 +755,44 @@ If a zone is currently attempting to repair a damaged defensive group, destroyin
 
 Not every zone is setup as a FARP. Only zones that you can spawn at and zones that have airfields will allow you to rearm and refuel.
 Some static objects that serve as structures for the zones do have FARP in the name, but this alone does not mean the zone is setup as a FARP.
+
+### 10.12 I've added the UH-60L and/or Hercules mods to the mission but when I try loading anything from the logistics menu, it says doors are not open, even though they are.
+
+For this to work, the mod needs to be installed into the servers mod folder as well.
+The door states are detected by checking the animation values on the 3D model of the aircraft. 
+
+### 10.13 Will I lose my save if I update to the new version of the mission?
+
+Check the changelog starting from your current version up to the latest version. If any of the updates causes a save reset, it will be noted there.
+
+### 10.14 Can I tune the build speeds of the two sides independantly of eachother?
+
+No. Both coalitions use the same parameters by design.
+
+### 10.15 I have created a modified version of the mission. Can I update it to the latest version without loosing my changes?
+
+You can try unzipping the mission file and updating the scripts inside. A .miz file is just a renamed .zip file.
+That said I can not provide support for modified versions, so do so at your own risk.
+
+### 10.16 The warning about enabling persistence is ominous. Is it really ok to make this change?
+
+As of writing this (2024-Mar-21), I do not know of any DCS missions that abuse this, but I consider that you should be aware that the risk exists, even if it is minor.
+
+This change enables any mission running within DCS to read from and write to files on your PC. Many other missions use this method to provide persistence, as it is the only way to persist data outside of the play session.
+
+This inherently comes with the risk that running missions from unkown or dubious sources can allow them to malliciously access the data on your PC.
+
+If you have doubts about running a certain mission, you can always undo the change to the MissionScripting.lua file before running it, or verify that any scripts in the mission, whether embeded in the mission file or in a doscript trigger do not make questionable calls to functions of the io and lfs modules.
+
+Missions will still be limited to accessing only files that your DCS installation is allowed to access. Having appropriately set access rights within your OS can also protect you.
+
+Pretense only accesses the two save files mentioned in the persistence chapter (with a 3rd file used by the optional TimePersistence mod).
+
+### 10.17 Can I use your scripts to make my own mission?
+
+You can use and modify the mission, including the scripts for personal or private use.
+
+However, please respect the time and effort I've put into this and do not share modified versions, do not upload missions that use the scripts I've written for this mission, and do not charge money for access to anything that uses my work.
 
 ## 11. Changelog
 
