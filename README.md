@@ -473,7 +473,7 @@ Available CMD items:
 
 |Item|Description|
 |:---:|:----|
-|Smoke markers|Will mark 5 enemies at the zone with red smoke|
+|Smoke markers|Will mark 5 enemies at the zone with red smoke. Only works against zones that have their information revealed.|
 |JTAC|Will spawn a JTAC drone at the chosen zone that will lase enemies for you. Lasts 60 minutes or until the zone runs out of enemies, Reveals information of zone its deployed to.|
 |Priority Zone|The selected zone will become a priority for your coalition. All AI missions will first target this zone if possible, and choose an alternative target if the selected one is not viable. You can use this to prioritize attacks on an enemy zone, captures on a neutral zone, and resupplys on a friendly zone. Lasts about 2 hours |
 |Hack comms|Has a chance to reveal resources and production information of zones near the frontline(success rate 50%)|
