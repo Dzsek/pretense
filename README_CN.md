@@ -1,3 +1,5 @@
+# Chinese manual is very outdated, please refer to the English manual!
+
 ![Pretense](/images/cover_banner.jpg)
 
 > 本文档的简体中文版本由 [java160](https://github.com/java160) 和 [GoldJohnKing](https://github.com/GoldJohnKing) 使用 ChatGPT 翻译。
