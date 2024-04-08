@@ -681,15 +681,7 @@ You can use the information in this file to export a mission status to a discord
 
 ## 9. Issue reporting
 
-If you find any bugs, issues, or you find the campaign does not work according to what is described in this manual, please report them on the Foothold Discord under  [#pretense-bug-reports](https://discord.com/channels/959044877470027848/1031459721313517578) channel. 
-
-Here's a [Discord invite](https://discord.gg/PtPsb9Mpk6) if you are not already a member.
-
-Try to include your dcs.log file and your Pretense save file into your bug report if possible.
-
-Please only report issues with unmodified versions of this campaign. I can't track down issues caused by modifications. Even if you modified a seemingly unrelated part, it can still cause problems in other unforseen ways.
-
-If you encounter issues with modified versions, your best bet is to either retrace your steps, or redownload the original version.
+:warning: Development and support of the project has been stopped.
 
 ### 9.1 Knows issues with 3rd party scripts
 
