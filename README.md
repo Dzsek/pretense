@@ -22,8 +22,6 @@ It took more then a year to make this. Burned myself out trying to balance it. I
 
 But here it is. Enjoy.
 
-If, after you get the chance to play it a bit, you consider I deserve it, feel free to buy me a [beer](https://www.buymeacoffee.com/dzsek). 
-
 ## Contents
 
 1. [The Battlefield](#1-the-battlefield)
